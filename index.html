@@ -8,7 +8,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 160' fill='%2300C2CB'%3E%3Crect width='200' height='160' rx='35' fill='%2300C2CB'/%3E%3Ccircle cx='28' cy='62' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Ccircle cx='64' cy='46' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Ccircle cx='100' cy='26' r='8' stroke='%23FFB800' stroke-width='8' fill='none'/%3E%3Ccircle cx='136' cy='46' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Ccircle cx='172' cy='62' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Cpath d='M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z' stroke='white' stroke-width='7.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M 52 138 C 82 147 118 147 148 138' stroke='white' stroke-width='7.5' stroke-linecap='round'/%3E%3C/svg%3E">
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Fonts -->
@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
-  <!-- FontAwesome 6.5 -->
+  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <script>
@@ -44,10 +44,10 @@
             mono: ['"JetBrains Mono"', 'monospace']
           },
           boxShadow: {
-            'glow-cyan': '0 10px 25px -5px rgba(0, 194, 203, 0.28)',
-            'glow-gold': '0 8px 20px -4px rgba(255, 184, 0, 0.35)',
-            'soft-card': '0 10px 30px -5px rgba(0, 194, 203, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
-            'float': '0 20px 40px -15px rgba(0, 194, 203, 0.2)'
+            'glow-cyan': '0 10px 25px -5px rgba(0, 194, 203, 0.35)',
+            'glow-gold': '0 8px 25px -4px rgba(255, 184, 0, 0.45)',
+            'soft-card': '0 12px 35px -5px rgba(0, 194, 203, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
+            'float': '0 20px 40px -15px rgba(0, 194, 203, 0.25)'
           }
         }
       }
@@ -65,101 +65,111 @@
     ::-webkit-scrollbar-track { background: #F2FCFD; }
     ::-webkit-scrollbar-thumb { background: #00C2CB; border-radius: 10px; }
     ::-webkit-scrollbar-thumb:hover { background: #008C94; }
+    
+    @keyframes gentlePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .pulse-delight { animation: gentlePulse 2.5s infinite ease-in-out; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-royal-turquoise selection:text-white">
 
-  <!-- Navigation Bar -->
-  <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-royal-turquoise shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[5rem] py-2 flex items-center justify-between gap-3">
+  <!-- Floating Island Luxury Navbar -->
+  <header class="sticky top-4 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full transition-all duration-300">
+    <nav class="bg-white/90 backdrop-blur-lg border border-royal-turquoise/40 rounded-full shadow-soft-card hover:shadow-float px-5 sm:px-7 py-3 flex items-center justify-between gap-4 transition-all duration-300">
       
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-        <div class="w-11 h-11 sm:w-12 sm:h-12 p-2 rounded-2xl bg-royal-turquoise flex items-center justify-center shadow-glow-cyan group-hover:scale-105 transition-transform duration-300 shrink-0">
-          <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" viewBox="0 0 200 160" fill="none">
+      <!-- Brand Logo (Original Academy SVG Crown) -->
+      <a href="#" class="flex items-center gap-3 group shrink-0">
+        <div class="w-12 h-12 p-2 rounded-2xl bg-royal-turquoise flex items-center justify-center shadow-glow-cyan group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300 shrink-0">
+          <svg class="w-8 h-8 text-white" viewBox="0 0 200 160" fill="none">
             <circle cx="28" cy="62" r="7" stroke="white" stroke-width="7" fill="none"/>
             <circle cx="64" cy="46" r="7" stroke="white" stroke-width="7" fill="none"/>
             <circle cx="100" cy="26" r="8" stroke="#FFB800" stroke-width="8" fill="none"/>
             <circle cx="136" cy="46" r="7" stroke="white" stroke-width="7" fill="none"/>
             <circle cx="172" cy="62" r="7" stroke="white" stroke-width="7" fill="none"/>
-            <path d="M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z" stroke="white" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z" stroke="white" stroke-width="7.5" stroke-linecap="round" fill="none"/>
             <path d="M 52 138 C 82 147 118 147 148 138" stroke="white" stroke-width="7.5" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="flex flex-col justify-center">
-          <span class="font-heading font-black text-xs sm:text-base tracking-wide uppercase text-royal-deep leading-none">
-            ROYAL IG ENGLISH ACADEMY
+          <span class="font-heading font-black text-xs sm:text-sm tracking-wider uppercase text-royal-deep leading-tight group-hover:text-royal-turquoise transition-colors">
+            ROYAL IG ACADEMY
           </span>
-          <span class="text-[9px] sm:text-[11px] font-bold tracking-wider text-royal-turquoise uppercase mt-1 leading-none">
+          <span class="text-[9px] font-bold tracking-widest text-royal-turquoise uppercase">
             BY: MRS. FATMA RAMADAN
           </span>
         </div>
       </a>
 
-      <!-- Desktop Links -->
-      <div class="hidden lg:flex items-center gap-6 xl:gap-7 text-xs font-bold uppercase tracking-wider text-royal-deep">
-        <a href="#about" class="hover:text-royal-turquoise transition py-1">About Educator</a>
-        <a href="#recorded-sessions" class="hover:text-royal-turquoise transition py-1 flex items-center gap-1.5 text-royal-turquoise font-black">
-          <i class="fa-solid fa-play-circle text-sm"></i>
+      <!-- Navigation Links -->
+      <div class="hidden lg:flex items-center gap-8 text-xs font-bold uppercase tracking-wider text-royal-deep">
+        <a href="#recorded-sessions" class="hover:text-royal-turquoise transition-colors flex items-center gap-2 group py-1">
+          <i class="fa-solid fa-circle-play text-xs text-royal-turquoise group-hover:scale-125 transition-transform"></i>
           <span>Recorded Sessions</span>
-          <span class="bg-royal-turquoise-light text-royal-turquoise text-[10px] px-2 py-0.5 rounded-full font-bold border border-royal-turquoise">Checkpoint & IGCSE</span>
         </a>
-        <a href="#courses" class="hover:text-royal-turquoise transition py-1">Live Masterclasses</a>
-        <a href="#study-buddy" class="hover:text-royal-turquoise transition py-1 flex items-center gap-1">
-          <span>Grade 9 Annotator</span>
-          <span class="bg-royal-gold text-royal-deep text-[9px] px-2 py-0.5 rounded-full font-black">Interactive</span>
+        <a href="#courses" class="hover:text-royal-turquoise transition-colors flex items-center gap-2 group py-1">
+          <i class="fa-solid fa-users text-xs text-royal-turquoise group-hover:scale-125 transition-transform"></i>
+          <span>Live Cohorts</span>
         </a>
-        <a href="#marking" class="hover:text-royal-turquoise transition py-1">Essay Marking</a>
+        <a href="#study-buddy" class="hover:text-royal-turquoise transition-colors flex items-center gap-2 group py-1">
+          <i class="fa-solid fa-wand-magic-sparkles text-xs text-royal-gold group-hover:rotate-12 transition-transform"></i>
+          <span>Annotator</span>
+        </a>
+        <a href="#marking" class="hover:text-royal-turquoise transition-colors flex items-center gap-2 group py-1">
+          <i class="fa-solid fa-feather-pointed text-xs text-royal-turquoise group-hover:translate-x-0.5 transition-transform"></i>
+          <span>Marking Desk</span>
+        </a>
       </div>
 
-      <!-- Action Buttons -->
-      <div class="flex items-center gap-2.5 shrink-0">
-        <button onclick="openClassroomFor('checkpoint')" class="bg-royal-gold hover:bg-royal-gold-hover text-royal-deep font-heading font-black px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs flex items-center gap-1.5 shadow-glow-gold transition cursor-pointer">
-          <i class="fa-solid fa-lock-open text-xs"></i>
+      <!-- Actions -->
+      <div class="flex items-center gap-3 shrink-0">
+        <!-- Student Portal Button -->
+        <button onclick="openClassroomFor('checkpoint')" class="pulse-delight bg-gradient-to-r from-royal-gold via-amber-400 to-yellow-500 hover:from-amber-400 hover:to-royal-gold text-royal-deep font-heading font-black px-4 sm:px-5 py-2.5 rounded-full text-xs flex items-center gap-2 shadow-glow-gold hover:scale-105 transition-all duration-300 cursor-pointer">
+          <i class="fa-solid fa-graduation-cap text-sm"></i>
           <span>Student Portal</span>
         </button>
 
-        <a href="https://wa.me/201014786466" target="_blank" class="bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-bold px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs flex items-center gap-1.5 sm:gap-2 shadow-glow-cyan transition shrink-0">
-          <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i>
-          <span id="nav-phone">01014786466</span>
+        <!-- WhatsApp Quick Link -->
+        <a href="https://wa.me/201014786466" target="_blank" class="w-10 h-10 rounded-full bg-royal-turquoise/15 hover:bg-royal-turquoise text-royal-turquoise hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm" title="Chat on WhatsApp (01014786466)">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
         </a>
 
-        <button onclick="toggleMobileNav()" class="lg:hidden p-2 rounded-xl bg-royal-turquoise-light text-royal-turquoise" aria-label="Toggle Menu">
+        <!-- Mobile Menu Toggle -->
+        <button onclick="toggleMobileNav()" class="lg:hidden p-2 rounded-full text-royal-deep hover:bg-royal-turquoise-soft" aria-label="Toggle Menu">
           <i class="fa-solid fa-bars text-base"></i>
         </button>
       </div>
-    </div>
 
-    <!-- Mobile Nav Flyout -->
-    <div id="mobile-nav" class="hidden lg:hidden px-5 pt-3 pb-6 bg-white border-t border-royal-turquoise space-y-3 shadow-xl">
-      <button onclick="openClassroomFor('checkpoint'); toggleMobileNav();" class="w-full py-2.5 text-center font-heading font-black text-xs bg-royal-gold text-royal-deep rounded-xl flex items-center justify-center gap-2">
-        <i class="fa-solid fa-lock-open"></i> Student Portal (Access Lectures)
-      </button>
-      <a href="#about" onclick="toggleMobileNav()" class="block py-2 text-sm text-royal-deep font-bold hover:text-royal-turquoise">About Educator</a>
-      <a href="#recorded-sessions" onclick="toggleMobileNav()" class="block py-2 text-sm text-royal-turquoise font-black flex items-center gap-2">
-        <i class="fa-solid fa-play-circle"></i> Recorded Sessions
+    </nav>
+  </header>
+
+  <!-- Mobile Flyout -->
+  <div id="mobile-nav" class="hidden lg:hidden fixed inset-x-4 top-24 z-50 px-6 py-5 bg-white/95 backdrop-blur-xl border border-royal-turquoise rounded-3xl space-y-3.5 shadow-2xl">
+    <button onclick="openClassroomFor('checkpoint'); toggleMobileNav();" class="w-full py-3 text-center font-heading font-black text-xs bg-royal-gold text-royal-deep rounded-2xl flex items-center justify-center gap-2 shadow-sm">
+      <i class="fa-solid fa-graduation-cap"></i> Student Portal (Access Lectures)
+    </button>
+    <a href="#recorded-sessions" onclick="toggleMobileNav()" class="block py-1.5 text-sm text-royal-deep font-bold hover:text-royal-turquoise">Recorded Sessions</a>
+    <a href="#courses" onclick="toggleMobileNav()" class="block py-1.5 text-sm text-royal-deep font-bold hover:text-royal-turquoise">Live Cohorts</a>
+    <a href="#study-buddy" onclick="toggleMobileNav()" class="block py-1.5 text-sm text-royal-deep font-bold hover:text-royal-turquoise">Grade 9 Annotator</a>
+    <a href="#marking" onclick="toggleMobileNav()" class="block py-1.5 text-sm text-royal-deep font-bold hover:text-royal-turquoise">Essay Marking</a>
+    <div class="pt-2 border-t border-slate-100">
+      <a href="https://wa.me/201014786466" target="_blank" class="w-full py-2.5 text-center font-bold text-xs bg-royal-turquoise text-white rounded-xl flex items-center justify-center gap-2">
+        <i class="fa-brands fa-whatsapp text-base"></i>
+        <span>WhatsApp: 01014786466</span>
       </a>
-      <a href="#courses" onclick="toggleMobileNav()" class="block py-2 text-sm text-royal-deep font-bold hover:text-royal-turquoise">Live Masterclasses</a>
-      <a href="#study-buddy" onclick="toggleMobileNav()" class="block py-2 text-sm text-royal-deep font-bold hover:text-royal-turquoise">Grade 9 Annotator</a>
-      <a href="#marking" onclick="toggleMobileNav()" class="block py-2 text-sm text-royal-deep font-bold hover:text-royal-turquoise">Essay Marking</a>
-      <div class="pt-3 border-t border-slate-100">
-        <a href="https://wa.me/201014786466" target="_blank" class="w-full py-2.5 text-center font-bold text-xs bg-royal-turquoise text-white rounded-xl flex items-center justify-center gap-2">
-          <i class="fa-brands fa-whatsapp text-sm"></i>
-          <span>WhatsApp: 01014786466</span>
-        </a>
-      </div>
     </div>
-  </nav>
+  </div>
 
   <!-- Hero Section -->
-  <header class="relative bg-gradient-to-b from-royal-turquoise-soft via-white to-royal-turquoise-soft pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-royal-turquoise overflow-hidden">
+  <header class="relative bg-gradient-to-b from-royal-turquoise-soft via-white to-royal-turquoise-soft pt-14 pb-16 lg:pt-18 lg:pb-24 border-b border-royal-turquoise overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border-2 border-royal-turquoise text-royal-deep text-xs font-bold shadow-sm">
             <span class="w-2.5 h-2.5 rounded-full bg-royal-turquoise animate-ping"></span>
-            <span class="font-extrabold text-royal-turquoise uppercase">Recorded Sessions &bull; Complete Video Access</span>
+            <span class="font-extrabold text-royal-turquoise uppercase">✨ Recorded Sessions &bull; Comprehensive Video Access</span>
           </div>
 
           <h1 class="font-heading font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.15] text-royal-deep">
@@ -167,12 +177,12 @@
           </h1>
 
           <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-            Specialized video access for Cambridge Lower Secondary Checkpoint (0861), Primary Checkpoint (0058), Pearson Edexcel IGCSE, and American Diploma. Instant access to Full HD recorded sessions and downloadable PDF model answers.
+            Specialized video access for Cambridge Lower Secondary Checkpoint (0861), Primary Checkpoint (0058), Pearson Edexcel IGCSE, and American Diploma[cite: 1, 2]. Instant access to Full HD recorded sessions and downloadable PDF model answers.
           </p>
 
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
-            <a href="#recorded-sessions" class="w-full sm:w-auto px-7 py-4 rounded-2xl font-heading font-bold text-sm text-white bg-royal-turquoise hover:bg-royal-turquoise-hover shadow-glow-cyan transition transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2.5">
-              <i class="fa-solid fa-circle-play text-base text-royal-gold"></i>
+            <a href="#recorded-sessions" class="w-full sm:w-auto px-7 py-4 rounded-2xl font-heading font-bold text-sm text-white bg-royal-turquoise hover:bg-royal-turquoise-hover shadow-glow-cyan transition transform hover:-translate-y-1 hover:scale-105 text-center flex items-center justify-center gap-2.5">
+              <i class="fa-solid fa-circle-play text-base text-royal-gold animate-bounce"></i>
               <span>Browse Recorded Sessions</span>
             </a>
             <a href="https://wa.me/201014786466" target="_blank" class="w-full sm:w-auto px-7 py-4 rounded-2xl font-heading font-bold text-sm text-royal-deep bg-white hover:bg-royal-turquoise-light border-2 border-royal-turquoise transition text-center flex items-center justify-center gap-2 shadow-sm">
@@ -199,7 +209,6 @@
 
         <div class="lg:col-span-5">
           <div class="bg-white rounded-3xl p-6 shadow-float border-2 border-royal-turquoise space-y-4 text-royal-deep relative group">
-            
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <span class="w-3 h-3 rounded-full bg-royal-turquoise"></span>
@@ -210,10 +219,10 @@
               </span>
             </div>
 
-            <div class="relative rounded-2xl overflow-hidden bg-gradient-to-tr from-cyan-900 to-royal-deep aspect-video flex items-center justify-center border-2 border-royal-turquoise group-hover:border-royal-turquoise-dark transition-all shadow-inner">
+            <div class="relative rounded-2xl overflow-hidden bg-gradient-to-tr from-cyan-900 to-royal-deep aspect-video flex items-center justify-center border-2 border-royal-turquoise shadow-inner group-hover:border-royal-turquoise-dark transition-all">
               <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#00C2CB_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
-              <button onclick="openVideoModal('https://player.vimeo.com/video/1229127932')" class="relative z-20 w-16 h-16 rounded-2xl bg-royal-turquoise text-white flex items-center justify-center shadow-glow-cyan hover:scale-110 transition-transform duration-300 cursor-pointer group-hover:bg-royal-gold group-hover:text-royal-deep">
+              <button onclick="openVideoModal('https://player.vimeo.com/video/1229127932')" class="relative z-20 w-16 h-16 rounded-2xl bg-royal-turquoise text-white flex items-center justify-center shadow-glow-cyan hover:scale-110 group-hover:bg-royal-gold group-hover:text-royal-deep transition-all duration-300 cursor-pointer">
                 <i class="fa-solid fa-play text-xl ml-1"></i>
               </button>
 
@@ -247,7 +256,6 @@
                 <span>Play Sample Video</span> &rarr;
               </button>
             </div>
-
           </div>
         </div>
 
@@ -260,8 +268,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-royal-turquoise-light text-royal-turquoise text-xs font-black border border-royal-turquoise">
-          <span>HIGH-YIELD RECORDED SESSIONS &bull; VIDEOS + MODEL ANSWERS</span>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-royal-turquoise-light text-royal-turquoise text-xs font-black border border-royal-turquoise shadow-sm">
+          <span>🎯 HIGH-YIELD RECORDED SESSIONS &bull; VIDEOS + MODEL ANSWERS</span>
         </div>
         <h2 class="font-heading font-black text-3xl sm:text-5xl text-royal-deep">
           On-Demand Recorded Sessions & Model Answers
@@ -274,45 +282,39 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
         <!-- PACKAGE 1: LOWER SECONDARY CHECKPOINT (2000 LE) -->
-        <div class="bg-white rounded-3xl p-6 sm:p-8 border-4 border-royal-turquoise shadow-float flex flex-col justify-between relative ring-4 ring-royal-turquoise/10">
-          <div class="absolute -top-3.5 right-8 bg-royal-turquoise text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider shadow-sm">
-            ⭐ Most Popular Checkpoint Package
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border-4 border-royal-turquoise shadow-float flex flex-col justify-between relative ring-4 ring-royal-turquoise/10 hover:shadow-2xl transition duration-300">
+          <div class="absolute -top-3.5 right-8 bg-gradient-to-r from-royal-turquoise to-cyan-600 text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider shadow-sm flex items-center gap-1.5">
+            <i class="fa-solid fa-star text-royal-gold"></i>
+            <span>Most Popular Checkpoint Package</span>
           </div>
 
           <div class="space-y-5">
             <div class="flex items-center justify-between">
-              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-royal-deep text-white">
-                Cambridge Lower Secondary (0861)
-              </span>
-              <span class="text-xs font-bold text-royal-turquoise bg-royal-turquoise-light px-3 py-1 rounded-full border border-royal-turquoise">
-                Instant Video + PDFs
-              </span>
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-royal-deep text-white">Cambridge Lower Secondary (0861)</span>
+              <span class="text-xs font-bold text-royal-turquoise bg-royal-turquoise-light px-3 py-1 rounded-full border border-royal-turquoise">Instant Video + PDFs</span>
             </div>
 
             <div>
-              <h3 class="font-heading font-bold text-2xl text-royal-deep">
-                Lower Secondary Checkpoint (0861) Recorded Sessions
-              </h3>
+              <h3 class="font-heading font-bold text-2xl text-royal-deep">Lower Secondary Checkpoint (0861) Recorded Sessions</h3>
               <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                Step-by-step deconstruction of Paper 1 (Non-Fiction) & Paper 2 (Fiction), explicit deduction methods, and full-mark sample writing frameworks.
+                Step-by-step deconstruction of Paper 1 (Non-Fiction) & Paper 2 (Fiction), explicit deduction methods, and full-mark sample writing frameworks[cite: 2].
               </p>
             </div>
 
-            <!-- PRICE: 2000 LE -->
             <div class="flex items-center justify-between p-4 bg-royal-turquoise-soft rounded-2xl border-2 border-royal-turquoise shadow-sm">
               <div>
                 <span class="text-[11px] font-bold text-royal-turquoise uppercase tracking-wider block">Recorded Sessions Fee</span>
                 <span class="font-heading font-black text-3xl text-royal-deep">2,000 <span class="text-lg">LE</span></span>
                 <span class="text-xs font-bold text-slate-500 block mt-0.5">Lifetime Full Access &bull; Instant Delivery</span>
               </div>
-              <span class="px-3 py-1.5 rounded-xl bg-white text-royal-deep text-xs font-black border border-royal-turquoise shadow-sm">
-                5 Recorded Sessions + PDFs
-              </span>
+              <span class="px-3 py-1.5 rounded-xl bg-white text-royal-deep text-xs font-black border border-royal-turquoise shadow-sm">5 Recorded Sessions + PDFs</span>
             </div>
 
             <!-- Deliverables Box -->
             <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-              <span class="font-bold text-royal-deep block">What You Receive Immediately:</span>
+              <span class="font-bold text-royal-deep block flex items-center gap-1.5">
+                <i class="fa-solid fa-gift text-royal-turquoise"></i> What You Receive Immediately:
+              </span>
               <ul class="space-y-1.5 text-slate-600">
                 <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> 5 Comprehensive High-Yield Recorded Sessions</li>
                 <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Downloadable PDF Annotated Model Answers (Grade-A Criteria)</li>
@@ -334,55 +336,48 @@
                 <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
                   <div class="flex items-center justify-between font-bold text-royal-deep">
                     <span>Session 1: Non-Fiction Reading Comprehension & Summary</span>
-                    <span class="text-[10px] font-bold text-royal-turquoise">Reading Strategy</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Video + PDF</span>
                   </div>
-                  <p class="text-[11px] text-slate-500 mt-1">Extracting explicit details, uncovering implicit layers, and synthesizing key points across texts.</p>
+                  <p class="text-[11px] text-slate-500 mt-1">Explicit details extraction, implicit layers, and clean summary writing[cite: 2].</p>
                 </div>
-
                 <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
                   <div class="flex items-center justify-between font-bold text-royal-deep">
                     <span>Session 2: Writer's Craft & Figurative Language Analysis</span>
-                    <span class="text-[10px] font-bold text-royal-turquoise">Analysis & Impact</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Model Answers</span>
                   </div>
-                  <p class="text-[11px] text-slate-500 mt-1">Explaining word connotations, evaluating imagery effects, and analyzing grammatical sentence choices.</p>
+                  <p class="text-[11px] text-slate-500 mt-1">Connotations analysis, imagery evaluation, and sentence clause effects[cite: 2].</p>
                 </div>
-
                 <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
                   <div class="flex items-center justify-between font-bold text-royal-deep">
                     <span>Session 3: Fiction Comprehension & Character Deductions</span>
-                    <span class="text-[10px] font-bold text-royal-turquoise">Textual Deduction</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Video + PDF</span>
                   </div>
-                  <p class="text-[11px] text-slate-500 mt-1">Inferring unspoken motives, evaluating tension, and distinguishing different narrative voices.</p>
+                  <p class="text-[11px] text-slate-500 mt-1">Inferring unspoken motives, evaluating narrative tension, and character voices[cite: 2].</p>
                 </div>
-
                 <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
                   <div class="flex items-center justify-between font-bold text-royal-deep">
                     <span>Session 4: Narrative & Descriptive Writing Frameworks</span>
-                    <span class="text-[10px] font-bold text-royal-turquoise">Creative Writing</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Model Essays</span>
                   </div>
-                  <p class="text-[11px] text-slate-500 mt-1">Manipulating sentence structures for dramatic effect, sensory details, and thematic progression.</p>
+                  <p class="text-[11px] text-slate-500 mt-1">Structuring vivid descriptions, dramatic dialogues, and cohesive story arcs[cite: 2].</p>
                 </div>
-
                 <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
                   <div class="flex items-center justify-between font-bold text-royal-deep">
                     <span>Session 5: Past Paper Walkthrough (50/50 Strategy)</span>
-                    <span class="text-[10px] font-bold text-royal-turquoise">Exam Mastery</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Exam Breakdown</span>
                   </div>
-                  <p class="text-[11px] text-slate-500 mt-1">Live exam timing allocation, avoiding common traps, and structuring full-mark answers.</p>
+                  <p class="text-[11px] text-slate-500 mt-1">Live exam pacing, full-mark structure modeling, and mark-scheme rubrics[cite: 2].</p>
                 </div>
               </div>
             </div>
-
           </div>
 
-          <!-- Actions -->
           <div class="pt-6 border-t border-slate-100 mt-6 space-y-2.5">
-            <button onclick="openEnrollModal('Lower Secondary Checkpoint (0861) Recorded Sessions', '2,000 LE')" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 text-center cursor-pointer">
+            <button onclick="openEnrollModal('Lower Secondary Checkpoint (0861) Recorded Sessions', '2,000 LE')" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
               <i class="fa-solid fa-bag-shopping text-base"></i>
               <span>Enroll Now & Get Instant Access (2000 LE)</span>
             </button>
-
-            <button onclick="openClassroomFor('checkpoint')" class="w-full py-3 rounded-2xl bg-royal-gold-light hover:bg-royal-gold/20 text-royal-deep border-2 border-royal-gold font-heading font-bold text-xs transition flex items-center justify-center gap-2 text-center cursor-pointer">
+            <button onclick="openClassroomFor('checkpoint')" class="w-full py-3 rounded-2xl bg-royal-gold-light hover:bg-royal-gold/20 text-royal-deep border-2 border-royal-gold font-heading font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
               <i class="fa-solid fa-lock-open text-amber-700"></i>
               <span>Already enrolled? Unlock & Watch Course 🔓</span>
             </button>
@@ -390,21 +385,15 @@
         </div>
 
         <!-- PACKAGE 2: EDEXCEL IGCSE LANGUAGE A (4EA1) -->
-        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise shadow-soft-card flex flex-col justify-between">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise shadow-soft-card flex flex-col justify-between hover:shadow-2xl transition duration-300">
           <div class="space-y-5">
             <div class="flex items-center justify-between">
-              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-royal-deep text-white">
-                Pearson Edexcel IGCSE &bull; 20 Recorded Sessions
-              </span>
-              <span class="text-xs font-bold text-royal-turquoise bg-royal-turquoise-light px-3 py-1 rounded-full border border-royal-turquoise">
-                Instant Video + PDFs
-              </span>
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-royal-deep text-white">Pearson Edexcel IGCSE &bull; 20 Recorded Sessions</span>
+              <span class="text-xs font-bold text-royal-turquoise bg-royal-turquoise-light px-3 py-1 rounded-full border border-royal-turquoise">Instant Video + PDFs</span>
             </div>
 
             <div>
-              <h3 class="font-heading font-bold text-2xl text-royal-deep">
-                Language A (4EA1) Recorded Sessions
-              </h3>
+              <h3 class="font-heading font-bold text-2xl text-royal-deep">Language A (4EA1) Recorded Sessions</h3>
               <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
                 Paper 1 Non-Fiction Anthology annotations, Question 4 & 5 structural blueprints, transactional writing masterclasses, and past paper live reactions.
               </p>
@@ -416,13 +405,13 @@
                 <span id="price-language" class="font-heading font-black text-2xl sm:text-3xl text-royal-deep">3,800 EGP</span>
                 <span class="text-xs font-bold text-slate-500"> / Term Access</span>
               </div>
-              <span class="px-3 py-1.5 rounded-xl bg-white text-royal-deep text-xs font-black border border-royal-turquoise shadow-sm">
-                Google Sheets Sync
-              </span>
+              <span class="px-3 py-1.5 rounded-xl bg-white text-royal-deep text-xs font-black border border-royal-turquoise shadow-sm">Google Sheets Sync</span>
             </div>
 
             <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-              <span class="font-bold text-royal-deep block">What You Receive Immediately:</span>
+              <span class="font-bold text-royal-deep block flex items-center gap-1.5">
+                <i class="fa-solid fa-gift text-royal-turquoise"></i> What You Receive Immediately:
+              </span>
               <ul class="space-y-1.5 text-slate-600">
                 <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> 20 Line-by-Line Recorded Sessions</li>
                 <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Complete Annotated Anthology Booklet (PDF)</li>
@@ -430,15 +419,55 @@
                 <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Examiner Mark-Scheme Walkthroughs</li>
               </ul>
             </div>
+
+            <!-- Curriculum Accordion for Language A -->
+            <div class="border-2 border-royal-turquoise rounded-2xl overflow-hidden bg-royal-turquoise-soft/30">
+              <button onclick="toggleAccordion('lang-curriculum')" class="w-full p-4 flex items-center justify-between text-left font-heading font-bold text-xs sm:text-sm text-royal-deep bg-white hover:bg-royal-turquoise-light transition cursor-pointer">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-royal-turquoise"></i>
+                  <span>Inspect Recorded Sessions Index & PDFs (20 Sessions)</span>
+                </span>
+                <i class="fa-solid fa-chevron-down text-royal-turquoise transition-transform duration-300" id="icon-lang-curriculum"></i>
+              </button>
+              <div id="lang-curriculum" class="hidden p-4 space-y-2.5 text-xs text-slate-700 border-t border-royal-turquoise bg-white">
+                <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
+                  <div class="flex items-center justify-between font-bold text-royal-deep">
+                    <span>Anthology Part 1: Danger of a Single Story & Passage to Africa</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Video + Notes</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">Full line-by-line annotations, writer's purpose, and key quotes.</p>
+                </div>
+                <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
+                  <div class="flex items-center justify-between font-bold text-royal-deep">
+                    <span>Anthology Part 2: Explorers or Boys & 127 Hours</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Annotated PDF</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">Exam question structures, tone shifts, and comparative techniques.</p>
+                </div>
+                <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
+                  <div class="flex items-center justify-between font-bold text-royal-deep">
+                    <span>Question 4 & 5 Comparative Analysis Blueprint</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Model Answers</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">Side-by-side linguistic comparison matrix for top grade bands.</p>
+                </div>
+                <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
+                  <div class="flex items-center justify-between font-bold text-royal-deep">
+                    <span>Transactional Writing: Speeches, Letters & Articles</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Writing Pack</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">Rhetorical structures, persuasive techniques, and exemplar essays.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="pt-6 border-t border-slate-100 mt-6 space-y-2.5">
-            <button onclick="openEnrollModal('Edexcel IGCSE Language A (4EA1) Recorded Sessions', document.getElementById('price-language').innerText)" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 text-center cursor-pointer">
+            <button onclick="openEnrollModal('Edexcel IGCSE Language A (4EA1) Recorded Sessions', document.getElementById('price-language').innerText)" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
               <i class="fa-solid fa-bag-shopping text-base"></i>
               <span>Enroll Now & Get Instant Access</span>
             </button>
-
-            <button onclick="openClassroomFor('language_a')" class="w-full py-3 rounded-2xl bg-royal-gold-light hover:bg-royal-gold/20 text-royal-deep border-2 border-royal-gold font-heading font-bold text-xs transition flex items-center justify-center gap-2 text-center cursor-pointer">
+            <button onclick="openClassroomFor('language_a')" class="w-full py-3 rounded-2xl bg-royal-gold-light hover:bg-royal-gold/20 text-royal-deep border-2 border-royal-gold font-heading font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
               <i class="fa-solid fa-lock-open text-amber-700"></i>
               <span>Already enrolled? Unlock & Watch Course 🔓</span>
             </button>
@@ -446,21 +475,15 @@
         </div>
 
         <!-- PACKAGE 3: EDEXCEL IGCSE LITERATURE (4ET1) -->
-        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise shadow-soft-card flex flex-col justify-between">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise shadow-soft-card flex flex-col justify-between hover:shadow-2xl transition duration-300">
           <div class="space-y-5">
             <div class="flex items-center justify-between">
-              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-royal-deep text-white">
-                Pearson Edexcel IGCSE &bull; 24 Recorded Sessions
-              </span>
-              <span class="text-xs font-bold text-royal-turquoise bg-royal-turquoise-light px-3 py-1 rounded-full border border-royal-turquoise">
-                Instant Video + PDFs
-              </span>
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-royal-deep text-white">Pearson Edexcel IGCSE &bull; 24 Recorded Sessions</span>
+              <span class="text-xs font-bold text-royal-turquoise bg-royal-turquoise-light px-3 py-1 rounded-full border border-royal-turquoise">Instant Video + PDFs</span>
             </div>
 
             <div>
-              <h3 class="font-heading font-bold text-2xl text-royal-deep">
-                Literature (4ET1) Recorded Sessions
-              </h3>
+              <h3 class="font-heading font-bold text-2xl text-royal-deep">Literature (4ET1) Recorded Sessions</h3>
               <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
                 Line-by-line analyses of Pearson Poetry Anthology, John Steinbeck's <em>Of Mice and Men</em>, and Level 5 comparative essay models.
               </p>
@@ -472,13 +495,13 @@
                 <span id="price-literature" class="font-heading font-black text-2xl sm:text-3xl text-royal-deep">2,800 EGP</span>
                 <span class="text-xs font-bold text-slate-500"> / Term Access</span>
               </div>
-              <span class="px-3 py-1.5 rounded-xl bg-white text-royal-deep text-xs font-black border border-royal-turquoise shadow-sm">
-                Google Sheets Sync
-              </span>
+              <span class="px-3 py-1.5 rounded-xl bg-white text-royal-deep text-xs font-black border border-royal-turquoise shadow-sm">Google Sheets Sync</span>
             </div>
 
             <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-              <span class="font-bold text-royal-deep block">What You Receive Immediately:</span>
+              <span class="font-bold text-royal-deep block flex items-center gap-1.5">
+                <i class="fa-solid fa-gift text-royal-turquoise"></i> What You Receive Immediately:
+              </span>
               <ul class="space-y-1.5 text-slate-600">
                 <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> 24 High-Definition Recorded Sessions</li>
                 <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Level 5 Model Answers for Poetry & <em>Of Mice and Men</em> (PDF)</li>
@@ -486,15 +509,55 @@
                 <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Exam Pacing & Comparative Essay Frameworks</li>
               </ul>
             </div>
+
+            <!-- Curriculum Accordion for Literature -->
+            <div class="border-2 border-royal-turquoise rounded-2xl overflow-hidden bg-royal-turquoise-soft/30">
+              <button onclick="toggleAccordion('lit-curriculum')" class="w-full p-4 flex items-center justify-between text-left font-heading font-bold text-xs sm:text-sm text-royal-deep bg-white hover:bg-royal-turquoise-light transition cursor-pointer">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-royal-turquoise"></i>
+                  <span>Inspect Recorded Sessions Index & PDFs (24 Sessions)</span>
+                </span>
+                <i class="fa-solid fa-chevron-down text-royal-turquoise transition-transform duration-300" id="icon-lit-curriculum"></i>
+              </button>
+              <div id="lit-curriculum" class="hidden p-4 space-y-2.5 text-xs text-slate-700 border-t border-royal-turquoise bg-white">
+                <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
+                  <div class="flex items-center justify-between font-bold text-royal-deep">
+                    <span>P.E.E.E.L Essay Mastery for Literature</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Essay Rubric</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">Embedding micro-quotes, analyzing literary techniques, and link sentences.</p>
+                </div>
+                <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
+                  <div class="flex items-center justify-between font-bold text-royal-deep">
+                    <span>Of Mice and Men: Themes, Characters & Structure</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Novella Notes</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">Deep analysis of George, Lennie, Curley's Wife, and the American Dream.</p>
+                </div>
+                <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
+                  <div class="flex items-center justify-between font-bold text-royal-deep">
+                    <span>Pearson Poetry Anthology: Comparative Models</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Comparison PDF</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">Detailed comparative essays for power, conflict, love, and identity poems.</p>
+                </div>
+                <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
+                  <div class="flex items-center justify-between font-bold text-royal-deep">
+                    <span>Unseen Poetry Deconstruction Technique</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Strategy Video</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">Fast scanning, finding form and rhyme schemes, and full mark responses.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="pt-6 border-t border-slate-100 mt-6 space-y-2.5">
-            <button onclick="openEnrollModal('Edexcel IGCSE Literature (4ET1) Recorded Sessions', document.getElementById('price-literature').innerText)" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 text-center cursor-pointer">
+            <button onclick="openEnrollModal('Edexcel IGCSE Literature (4ET1) Recorded Sessions', document.getElementById('price-literature').innerText)" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
               <i class="fa-solid fa-bag-shopping text-base"></i>
               <span>Enroll Now & Get Instant Access</span>
             </button>
-
-            <button onclick="openClassroomFor('literature')" class="w-full py-3 rounded-2xl bg-royal-gold-light hover:bg-royal-gold/20 text-royal-deep border-2 border-royal-gold font-heading font-bold text-xs transition flex items-center justify-center gap-2 text-center cursor-pointer">
+            <button onclick="openClassroomFor('literature')" class="w-full py-3 rounded-2xl bg-royal-gold-light hover:bg-royal-gold/20 text-royal-deep border-2 border-royal-gold font-heading font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
               <i class="fa-solid fa-lock-open text-amber-700"></i>
               <span>Already enrolled? Unlock & Watch Course 🔓</span>
             </button>
@@ -502,23 +565,17 @@
         </div>
 
         <!-- PACKAGE 4: PRIMARY CHECKPOINT ENGLISH (STAGE 6) -->
-        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise shadow-soft-card flex flex-col justify-between">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise shadow-soft-card flex flex-col justify-between hover:shadow-2xl transition duration-300">
           <div class="space-y-5">
             <div class="flex items-center justify-between">
-              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-royal-deep text-white">
-                Cambridge Primary (0058) &bull; 16 Recorded Sessions
-              </span>
-              <span class="text-xs font-bold text-royal-turquoise bg-royal-turquoise-light px-3 py-1 rounded-full border border-royal-turquoise">
-                Instant Video + PDFs
-              </span>
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-royal-deep text-white">Cambridge Stage 6 (0058) &bull; 16 Recorded Sessions</span>
+              <span class="text-xs font-bold text-royal-turquoise bg-royal-turquoise-light px-3 py-1 rounded-full border border-royal-turquoise">Instant Video + PDFs</span>
             </div>
 
             <div>
-              <h3 class="font-heading font-bold text-2xl text-royal-deep">
-                Primary Checkpoint English Recorded Sessions
-              </h3>
+              <h3 class="font-heading font-bold text-2xl text-royal-deep">Primary Checkpoint English Recorded Sessions</h3>
               <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                Reading comprehension context clues, figurative language mastery, punctuation rules, and creative narrative crafting.
+                Reading comprehension context clues, figurative language mastery, punctuation rules, and creative narrative crafting[cite: 1].
               </p>
             </div>
 
@@ -528,29 +585,69 @@
                 <span id="price-primary" class="font-heading font-black text-2xl sm:text-3xl text-royal-deep">3,200 EGP</span>
                 <span class="text-xs font-bold text-slate-500"> / Term Access</span>
               </div>
-              <span class="px-3 py-1.5 rounded-xl bg-white text-royal-deep text-xs font-black border border-royal-turquoise shadow-sm">
-                Google Sheets Sync
-              </span>
+              <span class="px-3 py-1.5 rounded-xl bg-white text-royal-deep text-xs font-black border border-royal-turquoise shadow-sm">Google Sheets Sync</span>
             </div>
 
             <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2">
-              <span class="font-bold text-royal-deep block">Core Skills Mastered:</span>
+              <span class="font-bold text-royal-deep block flex items-center gap-1.5">
+                <i class="fa-solid fa-gift text-royal-turquoise"></i> What You Receive Immediately:
+              </span>
               <ul class="space-y-1.5 text-slate-600">
-                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Text comprehension & multi-point summary techniques</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Figurative expressions & writer's atmosphere deconstruction</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Punctuation variety and complex sentence structure mastery</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Character and setting development in narrative writing</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> 16 Comprehensive Recorded Sessions</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Story Arc Structuring & Descriptive Samples (PDF)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> SPaG (Spelling, Punctuation & Grammar) High-Score Drills[cite: 1]</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Cambridge Past Paper Simulations</li>
               </ul>
+            </div>
+
+            <!-- Curriculum Accordion for Primary Checkpoint -->
+            <div class="border-2 border-royal-turquoise rounded-2xl overflow-hidden bg-royal-turquoise-soft/30">
+              <button onclick="toggleAccordion('primary-curriculum')" class="w-full p-4 flex items-center justify-between text-left font-heading font-bold text-xs sm:text-sm text-royal-deep bg-white hover:bg-royal-turquoise-light transition cursor-pointer">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-royal-turquoise"></i>
+                  <span>Inspect Recorded Sessions Index & PDFs (16 Sessions)</span>
+                </span>
+                <i class="fa-solid fa-chevron-down text-royal-turquoise transition-transform duration-300" id="icon-primary-curriculum"></i>
+              </button>
+              <div id="primary-curriculum" class="hidden p-4 space-y-2.5 text-xs text-slate-700 border-t border-royal-turquoise bg-white">
+                <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
+                  <div class="flex items-center justify-between font-bold text-royal-deep">
+                    <span>Reading Comprehension & Context Clues</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Video + Sheet</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">Locating facts, making simple deductions, and finding word meanings[cite: 1].</p>
+                </div>
+                <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
+                  <div class="flex items-center justify-between font-bold text-royal-deep">
+                    <span>Figurative Language: Similes, Metaphors & Imagery</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Handout PDF</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">Explaining author descriptions, settings, and sensory words[cite: 1].</p>
+                </div>
+                <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
+                  <div class="flex items-center justify-between font-bold text-royal-deep">
+                    <span>Punctuation Variety & SPaG Drills</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Practice Pack</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">Commas, speech marks, apostrophes, and complex sentence combinations[cite: 1].</p>
+                </div>
+                <div class="p-3 bg-royal-turquoise-soft rounded-xl border border-royal-turquoise/40">
+                  <div class="flex items-center justify-between font-bold text-royal-deep">
+                    <span>Creative Story Writing & Narrative Arcs</span>
+                    <span class="text-[10px] font-bold text-royal-turquoise">Model Stories</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">Developing beginning, problem, climax, and satisfying resolution[cite: 1].</p>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="pt-6 border-t border-slate-100 mt-6 space-y-2.5">
-            <button onclick="openEnrollModal('Primary Checkpoint English Recorded Sessions', document.getElementById('price-primary').innerText)" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 text-center cursor-pointer">
+            <button onclick="openEnrollModal('Primary Checkpoint English Recorded Sessions', document.getElementById('price-primary').innerText)" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
               <i class="fa-solid fa-bag-shopping text-base"></i>
               <span>Enroll Now & Get Instant Access</span>
             </button>
-
-            <button onclick="openClassroomFor('primary')" class="w-full py-3 rounded-2xl bg-royal-gold-light hover:bg-royal-gold/20 text-royal-deep border-2 border-royal-gold font-heading font-bold text-xs transition flex items-center justify-center gap-2 text-center cursor-pointer">
+            <button onclick="openClassroomFor('primary')" class="w-full py-3 rounded-2xl bg-royal-gold-light hover:bg-royal-gold/20 text-royal-deep border-2 border-royal-gold font-heading font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
               <i class="fa-solid fa-lock-open text-amber-700"></i>
               <span>Already enrolled? Unlock & Watch Course 🔓</span>
             </button>
@@ -558,21 +655,15 @@
         </div>
 
         <!-- PACKAGE 5: AMERICAN DIPLOMA (EST / SAT) -->
-        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-royal-gold shadow-soft-card flex flex-col justify-between">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-royal-gold shadow-soft-card flex flex-col justify-between hover:shadow-2xl transition duration-300">
           <div class="space-y-5">
             <div class="flex items-center justify-between">
-              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-royal-gold">
-                American Diploma &bull; 26 Recorded Sessions
-              </span>
-              <span class="text-xs font-bold text-amber-800 bg-royal-gold-light px-3 py-1 rounded-full border border-royal-gold">
-                Instant Video + PDFs
-              </span>
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-royal-gold">American Diploma &bull; 26 Recorded Sessions</span>
+              <span class="text-xs font-bold text-amber-800 bg-royal-gold-light px-3 py-1 rounded-full border border-royal-gold">Instant Video + PDFs</span>
             </div>
 
             <div>
-              <h3 class="font-heading font-bold text-2xl text-royal-deep">
-                American Diploma (EST / SAT) Recorded Sessions
-              </h3>
+              <h3 class="font-heading font-bold text-2xl text-royal-deep">American Diploma (EST / SAT) Recorded Sessions</h3>
               <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
                 EST & SAT English: passage mapping, rapid question elimination, grammar mechanics, and high-scoring speed drills.
               </p>
@@ -584,13 +675,13 @@
                 <span id="price-est" class="font-heading font-black text-2xl sm:text-3xl text-royal-deep">2,600 EGP</span>
                 <span class="text-xs font-bold text-slate-600"> / Round Access</span>
               </div>
-              <span class="px-3 py-1.5 rounded-xl bg-white text-amber-900 text-xs font-black border border-royal-gold shadow-sm">
-                Google Sheets Sync
-              </span>
+              <span class="px-3 py-1.5 rounded-xl bg-white text-amber-900 text-xs font-black border border-royal-gold shadow-sm">Google Sheets Sync</span>
             </div>
 
             <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200 text-xs space-y-2">
-              <span class="font-bold text-amber-900 block">What You Receive Immediately:</span>
+              <span class="font-bold text-amber-900 block flex items-center gap-1.5">
+                <i class="fa-solid fa-gift text-amber-600"></i> What You Receive Immediately:
+              </span>
               <ul class="space-y-1.5 text-slate-600">
                 <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> 26 Timed Speed & Accuracy Recorded Sessions</li>
                 <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Complete Reading Passage Mapping Cheatsheet (PDF)</li>
@@ -598,15 +689,48 @@
                 <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Real Test Elimination Drills</li>
               </ul>
             </div>
+
+            <!-- Curriculum Accordion for EST -->
+            <div class="border-2 border-royal-gold rounded-2xl overflow-hidden bg-royal-gold-light/30">
+              <button onclick="toggleAccordion('est-curriculum')" class="w-full p-4 flex items-center justify-between text-left font-heading font-bold text-xs sm:text-sm text-royal-deep bg-white hover:bg-amber-50 transition cursor-pointer">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-amber-600"></i>
+                  <span>Inspect Recorded Sessions Index & PDFs (26 Sessions)</span>
+                </span>
+                <i class="fa-solid fa-chevron-down text-amber-600 transition-transform duration-300" id="icon-est-curriculum"></i>
+              </button>
+              <div id="est-curriculum" class="hidden p-4 space-y-2.5 text-xs text-slate-700 border-t border-royal-gold bg-white">
+                <div class="p-3 bg-amber-50 rounded-xl border border-amber-200">
+                  <div class="flex items-center justify-between font-bold text-amber-900">
+                    <span>Reading Passage Mapping & Keyword Search</span>
+                    <span class="text-[10px] font-bold text-amber-700">Video + Strategy</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 mt-1">Active reading, finding main ideas, and eliminating wrong choices.</p>
+                </div>
+                <div class="p-3 bg-amber-50 rounded-xl border border-amber-200">
+                  <div class="flex items-center justify-between font-bold text-amber-900">
+                    <span>Grammar Mechanics & Modifier Elimination</span>
+                    <span class="text-[10px] font-bold text-amber-700">Rules PDF</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 mt-1">Dangling modifiers, subject-verb agreement, and punctuation drills.</p>
+                </div>
+                <div class="p-3 bg-amber-50 rounded-xl border border-amber-200">
+                  <div class="flex items-center justify-between font-bold text-amber-900">
+                    <span>Speed Elimination Drills</span>
+                    <span class="text-[10px] font-bold text-amber-700">Practice Drills</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 mt-1">Timed practice to spot tricky distractor choices and save time.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="pt-6 border-t border-slate-100 mt-6 space-y-2.5">
-            <button onclick="openEnrollModal('American Diploma (EST / SAT) Recorded Sessions', document.getElementById('price-est').innerText)" class="w-full py-4 rounded-2xl bg-royal-gold hover:bg-royal-gold-hover text-royal-deep font-heading font-black text-sm shadow-glow-gold transition flex items-center justify-center gap-2 text-center cursor-pointer">
+            <button onclick="openEnrollModal('American Diploma (EST / SAT) Recorded Sessions', document.getElementById('price-est').innerText)" class="w-full py-4 rounded-2xl bg-royal-gold hover:bg-royal-gold-hover text-royal-deep font-heading font-black text-sm shadow-glow-gold transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
               <i class="fa-solid fa-bag-shopping text-base"></i>
               <span>Enroll Now & Get Instant Access</span>
             </button>
-
-            <button onclick="openClassroomFor('est')" class="w-full py-3 rounded-2xl bg-amber-100 hover:bg-amber-200 text-royal-deep border-2 border-royal-gold font-heading font-bold text-xs transition flex items-center justify-center gap-2 text-center cursor-pointer">
+            <button onclick="openClassroomFor('est')" class="w-full py-3 rounded-2xl bg-amber-100 hover:bg-amber-200 text-royal-deep border-2 border-royal-gold font-heading font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
               <i class="fa-solid fa-lock-open text-amber-700"></i>
               <span>Already enrolled? Unlock & Watch Course 🔓</span>
             </button>
@@ -614,28 +738,26 @@
         </div>
 
         <!-- ALL-INCLUSIVE PASS -->
-        <div class="bg-gradient-to-br from-royal-turquoise-light via-white to-royal-gold-light rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise flex flex-col justify-between shadow-soft-card">
+        <div class="bg-gradient-to-br from-royal-turquoise-light via-white to-royal-gold-light rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise flex flex-col justify-between shadow-soft-card hover:shadow-2xl transition duration-300">
           <div class="space-y-5">
-            <div class="w-12 h-12 rounded-2xl bg-royal-turquoise text-white flex items-center justify-center text-xl shadow-glow-cyan">
+            <div class="w-14 h-14 rounded-2xl bg-royal-turquoise text-white flex items-center justify-center text-2xl shadow-glow-cyan animate-pulse">
               <i class="fa-solid fa-crown text-royal-gold"></i>
             </div>
             <div>
-              <h3 class="font-heading font-bold text-2xl text-royal-deep">
-                All-Inclusive Recorded Sessions Pass
-              </h3>
+              <h3 class="font-heading font-bold text-2xl text-royal-deep">All-Inclusive Recorded Sessions Pass</h3>
               <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
                 Combine full access across all recorded session packages with companion PDF workbooks and direct diagnostic marking support from Mrs. Fatma Ramadan.
               </p>
             </div>
             <ul class="text-xs sm:text-sm text-royal-deep font-semibold space-y-2">
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-turquoise"></i> Unlimited 24/7 video replay access across all subjects</li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-turquoise"></i> All downloadable PDF revision booklets included</li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-turquoise"></i> Dedicated WhatsApp marking desk with Mrs. Fatma</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-turquoise font-bold"></i> Unlimited 24/7 video replay access across all subjects</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-turquoise font-bold"></i> All downloadable PDF revision booklets included</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-turquoise font-bold"></i> Dedicated WhatsApp marking desk with Mrs. Fatma</li>
             </ul>
           </div>
 
           <div class="pt-6 mt-6 border-t border-royal-turquoise">
-            <button onclick="openEnrollModal('All-Inclusive Recorded Sessions Pass', 'Custom Academic Fee')" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 text-center cursor-pointer">
+            <button onclick="openEnrollModal('All-Inclusive Recorded Sessions Pass', 'Custom Academic Fee')" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
               <i class="fa-solid fa-crown text-royal-gold text-base"></i>
               <span>Consult & Unlock All-Inclusive Pass</span>
             </button>
@@ -768,7 +890,7 @@
           <div class="lg:col-span-5 bg-white rounded-2xl p-6 border-2 border-royal-turquoise flex flex-col justify-between shadow-sm">
             <div class="space-y-4">
               <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-royal-turquoise">
-                <i class="fa-solid fa-feather-pointed"></i>
+                <i class="fa-solid fa-feather-pointed animate-pulse"></i>
                 <span id="annot-badge">Examiner Marking Note</span>
               </div>
               <h4 id="annot-title" class="font-heading font-bold text-xl text-royal-deep">Click highlighted text to inspect criteria</h4>
@@ -799,7 +921,7 @@
   <section id="marking" class="py-20 bg-royal-turquoise-soft relative border-b border-royal-turquoise">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-royal-turquoise text-xs font-black border border-royal-turquoise">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-royal-turquoise text-xs font-black border border-royal-turquoise shadow-sm">
           <span>Diagnostic Examiner Feedback</span>
         </div>
         <h2 class="font-heading font-black text-3xl sm:text-4xl text-royal-deep">Line-by-Line Essay Marking Portal</h2>
@@ -858,71 +980,6 @@
     </div>
   </section>
 
-  <!-- Video Modal for Samples -->
-  <div id="video-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-5 bg-royal-deep/80 backdrop-blur-md">
-    <div class="bg-white rounded-3xl max-w-3xl w-full border-4 border-royal-turquoise shadow-float relative overflow-hidden flex flex-col text-royal-deep">
-      <div class="bg-royal-turquoise text-white p-4 flex items-center justify-between">
-        <h3 class="font-heading font-bold text-base">Recorded Session Sample Preview</h3>
-        <button onclick="closeVideoModal()" class="p-2 rounded-xl bg-white/20 hover:bg-white/30 text-white transition cursor-pointer">
-          <i class="fa-solid fa-xmark text-lg"></i>
-        </button>
-      </div>
-      <div class="p-4 bg-black aspect-video relative">
-        <iframe id="sample-iframe" class="w-full h-full" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- CHECKOUT & ENROLL MODAL -->
-  <div id="enroll-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-royal-deep/80 backdrop-blur-md">
-    <div class="bg-white rounded-3xl max-w-md w-full border-4 border-royal-turquoise shadow-float relative overflow-hidden p-6 sm:p-8 text-royal-deep">
-      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
-        <div>
-          <span class="text-[11px] font-bold uppercase tracking-wider text-royal-turquoise block">Instant Enrollment</span>
-          <h3 class="font-heading font-black text-xl text-royal-deep" id="modal-course-title">Checkout</h3>
-        </div>
-        <button onclick="closeEnrollModal()" class="w-9 h-9 rounded-xl bg-royal-turquoise-light text-royal-turquoise hover:bg-royal-turquoise hover:text-white transition flex items-center justify-center cursor-pointer">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <div class="py-4 space-y-3">
-        <div class="p-4 bg-royal-turquoise-soft rounded-2xl border border-royal-turquoise flex items-center justify-between">
-          <div>
-            <span class="text-xs text-slate-500 font-bold block">Recorded Sessions Fee</span>
-            <span class="font-heading font-black text-2xl text-royal-deep" id="modal-course-fee">2,000 LE</span>
-          </div>
-          <div class="text-right">
-            <span class="text-[10px] font-black uppercase text-white bg-royal-turquoise px-2 py-0.5 rounded-full">Vodafone / InstaPay</span>
-            <span class="text-xs font-mono font-bold text-royal-deep block mt-1">01014786466</span>
-          </div>
-        </div>
-
-        <div class="text-xs text-slate-600 space-y-1 bg-slate-50 p-3 rounded-xl border border-slate-200">
-          <p class="font-bold text-royal-deep">Instant 2-Step Enrollment:</p>
-          <p>1. Transfer the fee via <strong>InstaPay or Vodafone Cash</strong> to <strong>01014786466</strong>.</p>
-          <p>2. Enter student details below to receive full recorded session access and downloadable PDFs immediately via WhatsApp.</p>
-        </div>
-
-        <div class="space-y-3 pt-2">
-          <div>
-            <label class="block text-xs font-bold text-royal-deep mb-1">Student Full Name</label>
-            <input type="text" id="enroll-name" placeholder="e.g. Adam Mohamed" class="w-full px-4 py-2.5 rounded-xl border border-royal-turquoise text-xs focus:outline-none focus:border-royal-turquoise-dark bg-royal-turquoise-soft/30">
-          </div>
-          <div>
-            <label class="block text-xs font-bold text-royal-deep mb-1">Student / Guardian WhatsApp</label>
-            <input type="tel" id="enroll-phone" placeholder="010..." class="w-full px-4 py-2.5 rounded-xl border border-royal-turquoise text-xs focus:outline-none focus:border-royal-turquoise-dark bg-royal-turquoise-soft/30">
-          </div>
-
-          <button onclick="submitEnrollViaWhatsApp()" class="w-full py-4 rounded-xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-bold text-sm shadow-glow-cyan transition cursor-pointer flex items-center justify-center gap-2 mt-2">
-            <i class="fa-brands fa-whatsapp text-lg"></i>
-            <span>Confirm & Activate on WhatsApp</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- MULTI-COURSE INTEGRATED LMS CLASSROOM MODAL -->
   <div id="classroom-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-2 sm:p-4 bg-royal-deep/85 backdrop-blur-md">
     <div class="bg-white rounded-3xl max-w-6xl w-full h-[92vh] border-4 border-royal-turquoise shadow-2xl relative overflow-hidden flex flex-col text-royal-deep">
@@ -930,7 +987,7 @@
       <!-- Gate Screen -->
       <div id="lms-gate-screen" class="absolute inset-0 z-30 bg-[#0A1618] flex items-center justify-center p-4">
         <div class="bg-[#122427] border-2 border-royal-turquoise rounded-3xl p-6 sm:p-8 max-w-md w-full text-center space-y-4 shadow-float">
-          <div class="w-14 h-14 mx-auto rounded-2xl bg-royal-turquoise text-white flex items-center justify-center text-2xl shadow-glow-cyan">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-tr from-royal-turquoise to-cyan-400 text-white flex items-center justify-center text-2xl shadow-glow-cyan">
             <i class="fa-solid fa-lock"></i>
           </div>
           <h3 class="font-heading font-black text-2xl text-white">Student Classroom Gate</h3>
@@ -991,11 +1048,13 @@
           <!-- Handout Download Card -->
           <div class="mt-6 p-4 rounded-2xl bg-white border-2 border-royal-turquoise shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
             <div>
-              <h4 class="font-bold text-xs text-royal-deep">Companion PDF Handout & Model Answers</h4>
+              <h4 class="font-bold text-xs text-royal-deep flex items-center gap-1.5">
+                <i class="fa-solid fa-file-pdf text-royal-turquoise"></i> Companion PDF Handout & Model Answers
+              </h4>
               <p class="text-[11px] text-slate-500">Annotated mark schemes, writing templates, and vocabulary sheets.</p>
             </div>
             <a href="https://wa.me/201014786466?text=Hello%20Mrs.%20Fatma,%20please%20send%20the%20companion%20PDF%20for%20this%20lecture." target="_blank" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-royal-turquoise text-white hover:bg-royal-turquoise-hover font-bold text-xs transition flex items-center justify-center gap-2 shadow-sm shrink-0">
-              <i class="fa-solid fa-file-pdf"></i>
+              <i class="fa-solid fa-download"></i>
               <span>Download Lesson PDF</span>
             </a>
           </div>
@@ -1013,13 +1072,76 @@
             </div>
           </div>
 
-          <div class="flex-1 overflow-y-auto p-3 space-y-2" id="lms-curriculum-list">
-            <!-- Dynamically populated by JS according to selected course -->
-          </div>
+          <div class="flex-1 overflow-y-auto p-3 space-y-2" id="lms-curriculum-list"></div>
         </div>
 
       </div>
 
+    </div>
+  </div>
+
+  <!-- CHECKOUT & ENROLL MODAL -->
+  <div id="enroll-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-royal-deep/80 backdrop-blur-md">
+    <div class="bg-white rounded-3xl max-w-md w-full border-4 border-royal-turquoise shadow-float relative overflow-hidden p-6 sm:p-8 text-royal-deep">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-royal-turquoise block">Instant Enrollment</span>
+          <h3 class="font-heading font-black text-xl text-royal-deep" id="modal-course-title">Checkout</h3>
+        </div>
+        <button onclick="closeEnrollModal()" class="w-9 h-9 rounded-xl bg-royal-turquoise-light text-royal-turquoise hover:bg-royal-turquoise hover:text-white transition flex items-center justify-center cursor-pointer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="py-4 space-y-3">
+        <div class="p-4 bg-royal-turquoise-soft rounded-2xl border border-royal-turquoise flex items-center justify-between">
+          <div>
+            <span class="text-xs text-slate-500 font-bold block">Course Fee</span>
+            <span class="font-heading font-black text-2xl text-royal-deep" id="modal-course-fee">2,000 LE</span>
+          </div>
+          <div class="text-right">
+            <span class="text-[10px] font-black uppercase text-white bg-royal-turquoise px-2 py-0.5 rounded-full">Vodafone / InstaPay</span>
+            <span class="text-xs font-mono font-bold text-royal-deep block mt-1">01014786466</span>
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-600 space-y-1 bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <p class="font-bold text-royal-deep">Instant 2-Step Enrollment:</p>
+          <p>1. Transfer the fee via <strong>InstaPay or Vodafone Cash</strong> to <strong>01014786466</strong>.</p>
+          <p>2. Enter student details below to receive full recorded session access and downloadable PDFs immediately via WhatsApp.</p>
+        </div>
+
+        <div class="space-y-3 pt-2">
+          <div>
+            <label class="block text-xs font-bold text-royal-deep mb-1">Student Full Name</label>
+            <input type="text" id="enroll-name" placeholder="e.g. Adam Mohamed" class="w-full px-4 py-2.5 rounded-xl border border-royal-turquoise text-xs focus:outline-none focus:border-royal-turquoise-dark bg-royal-turquoise-soft/30">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-royal-deep mb-1">Student / Guardian WhatsApp</label>
+            <input type="tel" id="enroll-phone" placeholder="010..." class="w-full px-4 py-2.5 rounded-xl border border-royal-turquoise text-xs focus:outline-none focus:border-royal-turquoise-dark bg-royal-turquoise-soft/30">
+          </div>
+
+          <button onclick="submitEnrollViaWhatsApp()" class="w-full py-4 rounded-xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-bold text-sm shadow-glow-cyan transition cursor-pointer flex items-center justify-center gap-2 mt-2">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Confirm & Activate on WhatsApp</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Modal for Samples -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-5 bg-royal-deep/80 backdrop-blur-md">
+    <div class="bg-white rounded-3xl max-w-3xl w-full border-4 border-royal-turquoise shadow-float relative overflow-hidden flex flex-col text-royal-deep">
+      <div class="bg-royal-turquoise text-white p-4 flex items-center justify-between">
+        <h3 class="font-heading font-bold text-base">Recorded Session Sample Preview</h3>
+        <button onclick="closeVideoModal()" class="p-2 rounded-xl bg-white/20 hover:bg-white/30 text-white transition cursor-pointer">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div class="p-4 bg-black aspect-video relative">
+        <iframe id="sample-iframe" class="w-full h-full" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 
@@ -1044,13 +1166,17 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-y border-slate-100 text-xs text-center md:text-left items-start">
         <div class="space-y-2">
-          <h5 class="font-bold text-royal-turquoise uppercase tracking-wider text-sm">Direct WhatsApp Desk</h5>
+          <h5 class="font-bold text-royal-turquoise uppercase tracking-wider text-sm flex items-center justify-center md:justify-start gap-1.5">
+            <i class="fa-brands fa-whatsapp text-base"></i> Direct WhatsApp Desk
+          </h5>
           <p class="text-royal-deep font-black text-sm" id="footer-phone">01014786466</p>
           <p class="text-slate-500">Live cohorts booking & Recorded Sessions instant access.</p>
         </div>
 
         <div class="space-y-2">
-          <h5 class="font-bold text-royal-turquoise uppercase tracking-wider text-sm">Academic Syllabuses</h5>
+          <h5 class="font-bold text-royal-turquoise uppercase tracking-wider text-sm flex items-center justify-center md:justify-start gap-1.5">
+            <i class="fa-solid fa-book-open text-base"></i> Academic Syllabuses
+          </h5>
           <ul class="space-y-1 text-slate-600">
             <li>Lower Secondary Checkpoint (0861) Recorded Sessions - 2000 LE</li>
             <li>Edexcel IGCSE Literature (4ET1) Recorded Sessions</li>
@@ -1061,7 +1187,9 @@
         </div>
 
         <div class="space-y-2">
-          <h5 class="font-bold text-royal-turquoise uppercase tracking-wider text-sm">Direct Contact</h5>
+          <h5 class="font-bold text-royal-turquoise uppercase tracking-wider text-sm flex items-center justify-center md:justify-start gap-1.5">
+            <i class="fa-solid fa-envelope text-base"></i> Direct Contact
+          </h5>
           <p class="text-slate-500">Email: <a href="mailto:fatma.ramadan1191@yahoo.com" class="font-bold text-royal-deep hover:underline">fatma.ramadan1191@yahoo.com</a></p>
           <a href="https://wa.me/201014786466" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-bold text-xs shadow-glow-cyan transition mt-1">
             <i class="fa-brands fa-whatsapp text-sm"></i>
@@ -1078,7 +1206,7 @@
 
   <div id="toast-shelf" class="fixed bottom-5 right-5 z-50 space-y-2 pointer-events-none"></div>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   <script>
     const sheetCsvUrl = 'https://docs.google.com/spreadsheets/d/1mdPF2UB1QyVza58G1iaol5V-OoBnX-M5T-8AtwAJsfE/gviz/tq?tqx=out:csv';
 
@@ -1129,7 +1257,6 @@
       modal.classList.add('hidden');
     }
 
-    // Modal Enrollment Functions
     let selectedCourse = 'Lower Secondary Checkpoint (0861) Recorded Sessions';
     let selectedFee = '2,000 LE';
 
@@ -1158,7 +1285,6 @@
       showToast("Redirecting to WhatsApp for instant activation...");
     }
 
-    // --- MULTI-COURSE CLASSROOM LMS DATA (NATURAL & SMOOTH) ---
     const ROYAL_PASSCODE = "ROYAL2026";
 
     const coursesData = {
@@ -1256,7 +1382,6 @@
         listContainer.appendChild(itemDiv);
       });
 
-      // Default load first lesson
       if (data.lessons.length > 0) {
         selectLmsLesson(data.lessons[0].title, data.lessons[0].desc, data.lessons[0].url, data.lessons[0].badge);
       }
@@ -1300,7 +1425,10 @@
       document.getElementById('lms-progress-text').innerText = pct + '%';
     }
 
-    // Annotator Logic
+    function toggleMobileNav() {
+      document.getElementById('mobile-nav').classList.toggle('hidden');
+    }
+
     const studyData = {
       imagery1: {
         badge: "Zoomorphic Imagery",
@@ -1379,10 +1507,6 @@
       
       const msg = encodeURIComponent(`Hello Mrs. Fatma Ramadan, I submitted my essay on the website:\n- Name: ${name}\n- Course: ${course}\n- Title: ${title}`);
       window.open(`https://wa.me/201014786466?text=${msg}`, '_blank');
-    }
-
-    function toggleMobileNav() {
-      document.getElementById('mobile-nav').classList.toggle('hidden');
     }
 
     function showToast(msg) {
