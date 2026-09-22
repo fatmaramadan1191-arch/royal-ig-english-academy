@@ -1457,7 +1457,7 @@
       document.getElementById('annot-title').innerText = item.title;
       document.getElementById('annot-desc').innerText = item.desc;
       document.getElementById('annot-level').innerText = item.level;
-      showToast(`Selected: ${item.title}`);
+     showToast(`Selected: ${item.title}`);
     }
 
     function filterAnnotation(type) {
@@ -1521,6 +1521,21 @@
         setTimeout(() => toast.remove(), 300);
       }, 3200);
     }
+
+    // Paymob Link Automatic Integration
+    document.addEventListener("DOMContentLoaded", function () {
+      const paymobUrl = "https://paymob.link/xkVmq";
+      const links = document.querySelectorAll('a');
+      links.forEach(a => {
+        const text = (a.innerText || "").trim().toLowerCase();
+        const href = a.getAttribute("href") || "";
+        if (text.includes("enroll") || href.includes("Checkpoint") || href.includes("0861")) {
+          a.href = paymobUrl;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+        }
+      });
+    });
   </script>
 </body>
 </html>
