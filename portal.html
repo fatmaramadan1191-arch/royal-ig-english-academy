@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal | Royal IG English Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-dark: #1e293b;
+      --sidebar-bg: #0b1120;
+      --gold: #d4af37;
+      --gold-hover: #b8972e;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --active-item: #1e293b;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Auth Overlay */
+    #auth-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 1.5rem;
+    }
+    .auth-card {
+      background: var(--card-dark);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .auth-card h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .auth-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .auth-input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1rem;
+      text-align: center;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      outline: none;
+    }
+    .auth-input:focus { border-color: var(--gold); }
+    .auth-btn {
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--gold);
+      color: #0b1120;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .auth-btn:hover { background: var(--gold-hover); }
+    .error-msg {
+      color: #ef4444;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      display: none;
+    }
+
+    /* LMS Header */
+    header {
+      background: var(--sidebar-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .course-badge {
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold);
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    /* Main LMS Workspace */
+    .lms-layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      flex: 1;
+      height: calc(100vh - 61px);
+      overflow: hidden;
+    }
+
+    /* Sidebar Curriculum */
+    .curriculum-sidebar {
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .progress-box {
+      padding: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.4);
+    }
+    .progress-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+    }
+    .progress-bar-bg {
+      height: 6px;
+      background: #334155;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--success);
+      transition: width 0.3s ease;
+    }
+
+    .section-header {
+      padding: 0.85rem 1.25rem;
+      background: #111c33;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .lesson-item {
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      transition: all 0.2s;
+    }
+    .lesson-item:hover {
+      background: rgba(30, 41, 59, 0.7);
+      color: #fff;
+    }
+    .lesson-item.active {
+      background: var(--card-dark);
+      color: var(--gold);
+      font-weight: 600;
+      border-left: 3px solid var(--gold);
+    }
+    .lesson-item input[type="checkbox"] {
+      accent-color: var(--success);
+      cursor: pointer;
+    }
+
+    /* Video Player & Main Stage */
+    .player-workspace {
+      padding: 2rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .stage-container {
+      width: 100%;
+      max-width: 960px;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      border: 1px solid var(--border);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .lesson-meta {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+    .lesson-title-display {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.35rem;
+    }
+    .lesson-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .resources-card {
+      margin-top: 1.5rem;
+      background: var(--card-dark);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .resource-btn {
+      background: #334155;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+    .resource-btn:hover { background: #475569; }
+
+    @media (max-width: 900px) {
+      .lms-layout { grid-template-columns: 1fr; height: auto; }
+      .curriculum-sidebar { height: 350px; }
+      .player-workspace { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Access Passcode Protection Modal -->
+  <div id="auth-overlay">
+    <div class="auth-card">
+      <h2>Royal IG Academy</h2>
+      <p>Enter your student access passcode to unlock your learning portal.</p>
+      <input type="password" id="passcodeInput" class="auth-input" placeholder="PASSCODE" autofocus />
+      <button class="auth-btn" onclick="checkAccess()">Enter Classroom</button>
+      <p id="errorMsg" class="error-msg">Invalid passcode. Please contact Mrs. Fatma on WhatsApp.</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="brand-title">Royal IG English Academy</a>
+    <span class="course-badge">Checkpoint (0861) Masterclass</span>
+  </header>
+
+  <!-- LMS Layout -->
+  <div class="lms-layout">
+    <!-- Sidebar: Course Syllabus / First Rate Tutors Style -->
+    <aside class="curriculum-sidebar">
+      <div class="progress-box">
+        <div class="progress-labels">
+          <span>Course Completion</span>
+          <span id="progressText">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+      </div>
+
+      <!-- Section 1 -->
+      <div class="section-header">1. Course Introduction & Foundations</div>
+      <div class="lesson-item active" onclick="loadLesson('Welcome & Course Expectations', 'Introduction to the curriculum, key expectations, and road to Grade 9 / Outstanding.', 'https://player.vimeo.com/video/76979871?h=8272103f6e')">
+        <input type="checkbox" onchange="updateProgress()" />
+        <span>Welcome & Course Expectations</span>
+      </div>
+      <div class="lesson-item" onclick="loadLesson('P.E.E.E.L Paragraph Structure', 'Mastering Point, Evidence, Explanation, Effect, and Link for top-band responses.', 'https://player.vimeo.com/video/76979871?h=8272103f6e')">
+        <input type="checkbox" onchange="updateProgress()" />
+        <span>How to Write P.E.E.E.L Paragraphs</span>
+      </div>
+      <div class="lesson-item" onclick="loadLesson('Key Literary Devices & Terminology', 'Anaphora, Asyndeton, Chiasmus, Anthropomorphism and how to spot them.', 'https://player.vimeo.com/video/76979871?h=8272103f6e')">
+        <input type="checkbox" onchange="updateProgress()" />
+        <span>Terminology & Devices Explained</span>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="section-header">2. Paper 1: Non-Fiction Analysis</div>
+      <div class="lesson-item" onclick="loadLesson('Paper 1 Timing & Reading Walkthrough', 'Step-by-step method to read unseen texts and allocate minutes accurately.', 'https://player.vimeo.com/video/76979871?h=8272103f6e')">
+        <input type="checkbox" onchange="updateProgress()" />
+        <span>Paper 1 Timings & Walkthrough</span>
+      </div>
+      <div class="lesson-item" onclick="loadLesson('Explaining Writer\'s Effects', 'Detailed breakdown of how writers use structure, tone, and vocabulary.', 'https://player.vimeo.com/video/76979871?h=8272103f6e')">
+        <input type="checkbox" onchange="updateProgress()" />
+        <span>Analyzing Writer\'s Effects</span>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="section-header">3. Literature & Prose Masterclass</div>
+      <div class="lesson-item" onclick="loadLesson('Character & Theme Analysis: Of Mice and Men', 'Key quote breakdowns, context, and symbolic relationships.', 'https://player.vimeo.com/video/76979871?h=8272103f6e')">
+        <input type="checkbox" onchange="updateProgress()" />
+        <span>Of Mice and Men: Character & Themes</span>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="section-header">4. Past Papers & Model Answers</div>
+      <div class="lesson-item" onclick="loadLesson('Live Exam Reaction & Walkthrough', 'Live breakdown of exam questions with timing strategies and sample answers.', 'https://player.vimeo.com/video/76979871?h=8272103f6e')">
+        <input type="checkbox" onchange="updateProgress()" />
+        <span>Live Reaction Exam Walkthrough</span>
+      </div>
+      <div class="lesson-item" onclick="loadLesson('Full Top-Band Model Answers', 'Deconstructing full mark exemplar papers line by line.', 'https://player.vimeo.com/video/76979871?h=8272103f6e')">
+        <input type="checkbox" onchange="updateProgress()" />
+        <span>Exemplar Model Answers Breakdown</span>
+      </div>
+    </aside>
+
+    <!-- Main Stage: Video + Handout Resources -->
+    <main class="player-workspace">
+      <div class="stage-container">
+        <div class="video-wrapper">
+          <iframe id="videoPlayer" src="https://player.vimeo.com/video/76979871?h=8272103f6e" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="lesson-meta">
+          <div>
+            <h1 class="lesson-title-display" id="lessonTitle">Welcome & Course Expectations</h1>
+            <p class="lesson-desc" id="lessonDesc">Introduction to the curriculum, key expectations, and road to Grade 9 / Outstanding.</p>
+          </div>
+        </div>
+
+        <div class="resources-card">
+          <div>
+            <h3 style="font-size: 1rem; color: #fff; margin-bottom: 0.2rem;">Lesson Handout & Model Answers</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">PDF revision sheets, vocabulary list, and annotated responses.</p>
+          </div>
+          <a href="#" class="resource-btn" id="downloadBtn" target="_blank">
+            <span>📥 Download Resource (PDF)</span>
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Access Passcode Logic (Default code set to: ROYAL2026)
+    const CORRECT_PASSCODE = "ROYAL2026";
+
+    function checkAccess() {
+      const input = document.getElementById("passcodeInput").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
+      if (input.toUpperCase() === CORRECT_PASSCODE) {
+        document.getElementById("auth-overlay").style.display = "none";
+        sessionStorage.setItem("academy_auth", "granted");
+      } else {
+        errorMsg.style.display = "block";
+      }
+    }
+
+    // Auto-login if previously verified in session
+    if (sessionStorage.getItem("academy_auth") === "granted") {
+      document.getElementById("auth-overlay").style.display = "none";
+    }
+
+    // Lesson Switcher
+    function loadLesson(title, desc, videoUrl) {
+      document.getElementById("lessonTitle").innerText = title;
+      document.getElementById("lessonDesc").innerText = desc;
+      document.getElementById("videoPlayer").src = videoUrl;
+
+      // Update active highlight
+      const items = document.querySelectorAll(".lesson-item");
+      items.forEach(el => el.classList.remove("active"));
+      event.currentTarget.classList.add("active");
+    }
+
+    // Progress Bar Tracker
+    function updateProgress() {
+      const checkboxes = document.querySelectorAll('.lesson-item input[type="checkbox"]');
+      const checked = document.querySelectorAll('.lesson-item input[type="checkbox"]:checked');
+      const percentage = Math.round((checked.length / checkboxes.length) * 100);
+      document.getElementById("progressBar").style.width = percentage + "%";
+      document.getElementById("progressText").innerText = percentage + "%";
+    }
+  </script>
+</body>
+</html>
