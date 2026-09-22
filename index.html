@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal IG English Academy | By: Mrs. Fatma Ramadan</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 160' fill='%2300C2CB'%3E%3Crect width='200' height='160' rx='35' fill='%2300C2CB'/%3E%3Ccircle cx='28' cy='62' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Ccircle cx='64' cy='46' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Ccircle cx='100' cy='26' r='8' stroke='%23FFB800' stroke-width='8' fill='none'/%3E%3Ccircle cx='136' cy='46' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Ccircle cx='172' cy='62' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Cpath d='M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z' stroke='white' stroke-width='7.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M 52 138 C 82 147 118 147 148 138' stroke='white' stroke-width='7.5' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6.5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            royal: {
+              turquoise: '#00C2CB',
+              'turquoise-hover': '#00A8B0',
+              'turquoise-dark': '#008C94',
+              'turquoise-light': '#E8FAFB',
+              'turquoise-soft': '#F2FCFD',
+              deep: '#0F373A',
+              slate: '#1E293B',
+              gold: '#FFB800',
+              'gold-hover': '#E5A500',
+              'gold-light': '#FFF9E6'
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            arabic: ['Cairo', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          boxShadow: {
+            'glow-cyan': '0 10px 25px -5px rgba(0, 194, 203, 0.28)',
+            'glow-gold': '0 8px 20px -4px rgba(255, 184, 0, 0.35)',
+            'soft-card': '0 10px 30px -5px rgba(0, 194, 203, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
+            'float': '0 20px 40px -15px rgba(0, 194, 203, 0.2)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #F8FEFE;
+      color: #0F373A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    .study-chip {
+      cursor: pointer;
+      padding: 2px 8px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      display: inline-block;
+      margin: 1px 0;
+      font-weight: 600;
+    }
+    .study-chip-turquoise {
+      background-color: #E8FAFB;
+      border-bottom: 2.5px solid #00C2CB;
+      color: #008C94;
+    }
+    .study-chip-turquoise:hover, .study-chip-turquoise.active {
+      background-color: #00C2CB;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 194, 203, 0.3);
+    }
+    .study-chip-gold {
+      background-color: #FFF9E6;
+      border-bottom: 2.5px solid #FFB800;
+      color: #8C6200;
+    }
+    .study-chip-gold:hover, .study-chip-gold.active {
+      background-color: #FFB800;
+      color: #0F373A;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 184, 0, 0.3);
+    }
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #F2FCFD; }
+    ::-webkit-scrollbar-thumb { background: #00C2CB; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #008C94; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-royal-turquoise selection:text-white">
+
+  <!-- Navigation Bar -->
+  <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-royal-turquoise shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[5rem] py-2 flex items-center justify-between gap-3">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+        <div class="w-11 h-11 sm:w-12 sm:h-12 p-2 rounded-2xl bg-royal-turquoise flex items-center justify-center shadow-glow-cyan group-hover:scale-105 transition-transform duration-300 shrink-0">
+          <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="62" r="7" stroke="white" stroke-width="7" fill="none"/>
+            <circle cx="64" cy="46" r="7" stroke="white" stroke-width="7" fill="none"/>
+            <circle cx="100" cy="26" r="8" stroke="#FFB800" stroke-width="8" fill="none"/>
+            <circle cx="136" cy="46" r="7" stroke="white" stroke-width="7" fill="none"/>
+            <circle cx="172" cy="62" r="7" stroke="white" stroke-width="7" fill="none"/>
+            <path d="M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z" stroke="white" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M 52 138 C 82 147 118 147 148 138" stroke="white" stroke-width="7.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="flex flex-col justify-center">
+          <span class="font-heading font-black text-xs sm:text-base tracking-wide uppercase text-royal-deep leading-none">
+            ROYAL IG ENGLISH ACADEMY
+          </span>
+          <span class="text-[9px] sm:text-[11px] font-bold tracking-wider text-royal-turquoise uppercase mt-1 leading-none">
+            BY: MRS. FATMA RAMADAN
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center gap-6 xl:gap-7 text-xs font-bold uppercase tracking-wider text-royal-deep">
+        <a href="#about" class="hover:text-royal-turquoise transition py-1">About Educator</a>
+        <a href="#recorded-sessions" class="hover:text-royal-turquoise transition py-1 flex items-center gap-1.5 text-royal-turquoise font-black">
+          <i class="fa-solid fa-play-circle text-sm"></i>
+          <span>Recorded Sessions</span>
+          <span class="bg-royal-turquoise-light text-royal-turquoise text-[10px] px-2 py-0.5 rounded-full font-bold border border-royal-turquoise">Checkpoint & IGCSE</span>
+        </a>
+        <a href="#courses" class="hover:text-royal-turquoise transition py-1">Live Masterclasses</a>
+        <a href="#study-buddy" class="hover:text-royal-turquoise transition py-1 flex items-center gap-1">
+          <span>Grade 9 Annotator</span>
+          <span class="bg-royal-gold text-royal-deep text-[9px] px-2 py-0.5 rounded-full font-black">Interactive</span>
+        </a>
+        <a href="#marking" class="hover:text-royal-turquoise transition py-1">Essay Marking</a>
+      </div>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="https://wa.me/201014786466" target="_blank" class="bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-bold px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs flex items-center gap-1.5 sm:gap-2 shadow-glow-cyan transition shrink-0">
+          <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i>
+          <span id="nav-phone">01014786466</span>
+        </a>
+
+        <button onclick="toggleMobileNav()" class="lg:hidden p-2 rounded-xl bg-royal-turquoise-light text-royal-turquoise" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars text-base"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Flyout -->
+    <div id="mobile-nav" class="hidden lg:hidden px-5 pt-3 pb-6 bg-white border-t border-royal-turquoise space-y-3 shadow-xl">
+      <a href="#about" onclick="toggleMobileNav()" class="block py-2 text-sm text-royal-deep font-bold hover:text-royal-turquoise">About Educator</a>
+      <a href="#recorded-sessions" onclick="toggleMobileNav()" class="block py-2 text-sm text-royal-turquoise font-black flex items-center gap-2">
+        <i class="fa-solid fa-play-circle"></i> Recorded Sessions
+      </a>
+      <a href="#courses" onclick="toggleMobileNav()" class="block py-2 text-sm text-royal-deep font-bold hover:text-royal-turquoise">Live Masterclasses</a>
+      <a href="#study-buddy" onclick="toggleMobileNav()" class="block py-2 text-sm text-royal-deep font-bold hover:text-royal-turquoise">Grade 9 Annotator</a>
+      <a href="#marking" onclick="toggleMobileNav()" class="block py-2 text-sm text-royal-deep font-bold hover:text-royal-turquoise">Essay Marking</a>
+      <div class="pt-3 border-t border-slate-100">
+        <a href="https://wa.me/201014786466" target="_blank" class="w-full py-2.5 text-center font-bold text-xs bg-royal-turquoise text-white rounded-xl flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>WhatsApp: 01014786466</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative bg-gradient-to-b from-royal-turquoise-soft via-white to-royal-turquoise-soft pt-12 pb-16 lg:pt-16 lg:pb-24 border-b border-royal-turquoise overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border-2 border-royal-turquoise text-royal-deep text-xs font-bold shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-royal-turquoise animate-ping"></span>
+            <span class="font-extrabold text-royal-turquoise uppercase">Recorded Sessions &bull; Comprehensive Video Access</span>
+          </div>
+
+          <h1 class="font-heading font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.15] text-royal-deep">
+            Master English Language & Literature With <span class="text-royal-turquoise underline decoration-royal-gold decoration-4">Mrs. Fatma Ramadan</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Specialized video access for Cambridge Lower Secondary Checkpoint (0861), Primary Checkpoint, Pearson Edexcel IGCSE, and American Diploma. Instant access to Full HD recorded sessions and downloadable PDF model answers.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <a href="#recorded-sessions" class="w-full sm:w-auto px-7 py-4 rounded-2xl font-heading font-bold text-sm text-white bg-royal-turquoise hover:bg-royal-turquoise-hover shadow-glow-cyan transition transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2.5">
+              <i class="fa-solid fa-circle-play text-base text-royal-gold"></i>
+              <span>Browse Recorded Sessions</span>
+            </a>
+            <a href="https://wa.me/201014786466" target="_blank" class="w-full sm:w-auto px-7 py-4 rounded-2xl font-heading font-bold text-sm text-royal-deep bg-white hover:bg-royal-turquoise-light border-2 border-royal-turquoise transition text-center flex items-center justify-center gap-2 shadow-sm">
+              <i class="fa-brands fa-whatsapp text-royal-turquoise text-base"></i>
+              <span>WhatsApp Admission Desk</span>
+            </a>
+          </div>
+
+          <div class="pt-6 border-t border-royal-turquoise grid grid-cols-3 gap-4 text-center lg:text-left">
+            <div>
+              <p class="font-heading text-3xl sm:text-4xl font-black text-royal-turquoise">50 / 50</p>
+              <p class="text-xs text-slate-600 font-bold mt-0.5">Checkpoint Perfect Scores</p>
+            </div>
+            <div>
+              <p class="font-heading text-3xl sm:text-4xl font-black text-royal-deep">98.5%</p>
+              <p class="text-xs text-slate-600 font-bold mt-0.5">Grade 8/9 & A* Rate</p>
+            </div>
+            <div>
+              <p class="font-heading text-3xl sm:text-4xl font-black text-royal-gold">100%</p>
+              <p class="text-xs text-slate-600 font-bold mt-0.5">Examiner Rubrics Alignment</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="bg-white rounded-3xl p-6 shadow-float border-2 border-royal-turquoise space-y-4 text-royal-deep relative group">
+            
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-royal-turquoise"></span>
+                <span class="text-xs font-bold text-royal-deep uppercase tracking-wider">Free Recorded Session Preview</span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full bg-royal-gold-light text-amber-900 text-[10px] font-bold border border-royal-gold">
+                Protected Full HD
+              </span>
+            </div>
+
+            <div class="relative rounded-2xl overflow-hidden bg-gradient-to-tr from-cyan-900 to-royal-deep aspect-video flex items-center justify-center border-2 border-royal-turquoise group-hover:border-royal-turquoise-dark transition-all shadow-inner">
+              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#00C2CB_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+              <button onclick="openVideoModal('https://player.vimeo.com/video/1229127932')" class="relative z-20 w-16 h-16 rounded-2xl bg-royal-turquoise text-white flex items-center justify-center shadow-glow-cyan hover:scale-110 transition-transform duration-300 cursor-pointer group-hover:bg-royal-gold group-hover:text-royal-deep">
+                <i class="fa-solid fa-play text-xl ml-1"></i>
+              </button>
+
+              <div class="absolute top-3 left-3 z-20 flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-white/90 text-royal-deep text-[10px] font-bold shadow-sm">
+                  Sample Recording
+                </span>
+                <span class="px-2.5 py-1 rounded-lg bg-royal-gold text-royal-deep text-[10px] font-black">
+                  Watch Free
+                </span>
+              </div>
+
+              <div class="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between text-white text-xs">
+                <div>
+                  <p class="font-bold text-xs">Lower Secondary Checkpoint (0861)</p>
+                  <p class="text-[10px] text-cyan-200">By Mrs. Fatma Ramadan</p>
+                </div>
+                <span class="font-mono text-[11px] bg-black/50 px-2 py-0.5 rounded text-white">Full HD</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2xl bg-royal-turquoise-soft border border-royal-turquoise text-xs space-y-1.5">
+              <div class="flex items-center gap-2 text-royal-deep font-bold">
+                <i class="fa-solid fa-shield-halved text-royal-turquoise text-sm"></i>
+                <span>How Are Recorded Sessions Accessed?</span>
+              </div>
+              <p class="text-[11px] text-slate-600 leading-tight">
+                Stream recorded sessions directly with dynamic watermarks and download companion PDF analytical handouts and Grade-A model answers alongside each video.
+              </p>
+            </div>
+
+            <div class="pt-1 flex items-center justify-between text-xs">
+              <span class="text-slate-500 font-semibold">Ready to test our teaching methodology?</span>
+              <button onclick="openVideoModal('https://player.vimeo.com/video/1229127932')" class="font-bold text-royal-turquoise hover:text-royal-turquoise-dark flex items-center gap-1 cursor-pointer">
+                <span>Play Sample Video</span> &rarr;
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- RECORDED SESSIONS SECTION -->
+  <section id="recorded-sessions" class="py-20 bg-white border-b border-royal-turquoise relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-royal-turquoise-light text-royal-turquoise text-xs font-black border border-royal-turquoise">
+          <span>HIGH-YIELD RECORDED SESSIONS &bull; VIDEOS + MODEL ANSWERS</span>
+        </div>
+        <h2 class="font-heading font-black text-3xl sm:text-5xl text-royal-deep">
+          On-Demand Recorded Sessions & Model Answers
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Watch recorded sessions on-demand, download examiner-approved model answers, and secure instant access with instant WhatsApp verification.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- PACKAGE 1: LOWER SECONDARY CHECKPOINT (2000 LE) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border-4 border-royal-turquoise shadow-float flex flex-col justify-between relative ring-4 ring-royal-turquoise/10">
+          <div class="absolute -top-3.5 right-8 bg-royal-turquoise text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider shadow-sm">
+            ⭐ Most Popular Checkpoint Package
+          </div>
+
+          <div class="space-y-5">
+            <div class="flex items-center justify-between">
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-royal-deep text-white">
+                Cambridge Lower Secondary (0861)
+              </span>
+              <span class="text-xs font-bold text-royal-turquoise bg-royal-turquoise-light px-3 py-1 rounded-full border border-royal-turquoise">
+                Instant Video + PDFs
+              </span>
+            </div>
+
+            <div>
+              <h3 class="font-heading font-bold text-2xl text-royal-deep">
+                Lower Secondary Checkpoint (0861) Recorded Sessions
+              </h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Step-by-step deconstruction of Paper 1 (Non-Fiction) & Paper 2 (Fiction), explicit deduction methods, and full-mark sample writing frameworks.
+              </p>
+            </div>
+
+            <!-- PRICE: 2000 LE -->
+            <div class="flex items-center justify-between p-4 bg-royal-turquoise-soft rounded-2xl border-2 border-royal-turquoise shadow-sm">
+              <div>
+                <span class="text-[11px] font-bold text-royal-turquoise uppercase tracking-wider block">Recorded Sessions Fee</span>
+                <span class="font-heading font-black text-3xl text-royal-deep">2,000 <span class="text-lg">LE</span></span>
+                <span class="text-xs font-bold text-slate-500 block mt-0.5">Lifetime Full Access &bull; Instant Delivery</span>
+              </div>
+              <span class="px-3 py-1.5 rounded-xl bg-white text-royal-deep text-xs font-black border border-royal-turquoise shadow-sm">
+                5 Recorded Sessions + PDFs
+              </span>
+            </div>
+
+            <!-- Sample Video -->
+            <div class="space-y-2 pt-1">
+              <button onclick="openVideoModal('https://player.vimeo.com/video/1229127932')" class="w-full py-3 rounded-xl bg-royal-turquoise-light hover:bg-royal-turquoise text-royal-deep hover:text-white border border-royal-turquoise font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                <i class="fa-solid fa-play text-royal-turquoise"></i>
+                <span>Watch Free Recorded Session Preview</span>
+              </button>
+            </div>
+
+            <!-- Deliverables Box -->
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2">
+              <span class="font-bold text-royal-deep block">What You Receive Immediately:</span>
+              <ul class="space-y-1.5 text-slate-600">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> 5 Comprehensive High-Yield Recorded Sessions</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Downloadable PDF Annotated Model Answers (Grade-A Criteria)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Writer's Craft & Figurative Language Vocabulary Bank</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Past Paper Checklist Targeting 50/50 Marks</li>
+              </ul>
+            </div>
+
+            <!-- Curriculum Accordion -->
+            <div class="border-2 border-royal-turquoise rounded-2xl overflow-hidden bg-royal-turquoise-soft/30">
+              <button onclick="toggleAccordion('checkpoint-curriculum')" class="w-full p-4 flex items-center justify-between text-left font-heading font-bold text-xs sm:text-sm text-royal-deep bg-white hover:bg-royal-turquoise-light transition cursor-pointer">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-royal-turquoise"></i>
+                  <span>Inspect Recorded Sessions Index & PDFs (5 Sessions)</span>
+                </span>
+                <i class="fa-solid fa-chevron-down text-royal-turquoise transition-transform duration-300" id="icon-checkpoint-curriculum"></i>
+              </button>
+              <div id="checkpoint-curriculum" class="hidden p-4 space-y-2 text-xs text-slate-700 border-t border-royal-turquoise bg-white">
+                <div class="p-2.5 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Session 1: Non-Fiction Reading Comprehension & Summary</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">Video + PDF Handout</span>
+                </div>
+                <div class="p-2.5 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Session 2: Writer's Effects & Figurative Language Analysis</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">Video + Model Answers</span>
+                </div>
+                <div class="p-2.5 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Session 3: Fiction Comprehension & Character Deductions</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">Video + PDF Handout</span>
+                </div>
+                <div class="p-2.5 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Session 4: Narrative & Descriptive Writing Frameworks</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">Video + Model Essays</span>
+                </div>
+                <div class="p-2.5 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Session 5: Past Paper Walkthrough (50/50 Strategy)</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">Full Exam Breakdown</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-6 border-t border-slate-100 mt-6">
+            <button onclick="openEnrollModal('Lower Secondary Checkpoint (0861) Recorded Sessions', '2,000 LE')" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 text-center cursor-pointer">
+              <i class="fa-solid fa-bag-shopping text-base"></i>
+              <span>Enroll Now & Get Instant Access (2000 LE)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PACKAGE 2: EDEXCEL IGCSE LANGUAGE A (4EA1) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise shadow-soft-card flex flex-col justify-between">
+          <div class="space-y-5">
+            <div class="flex items-center justify-between">
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-royal-deep text-white">
+                Pearson Edexcel IGCSE &bull; 20 Recorded Sessions
+              </span>
+              <span class="text-xs font-bold text-royal-turquoise bg-royal-turquoise-light px-3 py-1 rounded-full border border-royal-turquoise">
+                Instant Video + PDFs
+              </span>
+            </div>
+
+            <div>
+              <h3 class="font-heading font-bold text-2xl text-royal-deep">
+                Language A (4EA1) Recorded Sessions
+              </h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Paper 1 Non-Fiction Anthology annotations, Question 4 & 5 structural blueprints, transactional writing masterclasses, and past paper live reactions.
+              </p>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-royal-turquoise-soft rounded-2xl border-2 border-royal-turquoise shadow-sm">
+              <div>
+                <span class="text-[11px] font-bold text-royal-turquoise uppercase tracking-wider block">Investment Fee (Live Sync)</span>
+                <span id="price-language" class="font-heading font-black text-2xl sm:text-3xl text-royal-deep">3,800 EGP</span>
+                <span class="text-xs font-bold text-slate-500"> / Term Access</span>
+              </div>
+              <span class="px-3 py-1.5 rounded-xl bg-white text-royal-deep text-xs font-black border border-royal-turquoise shadow-sm">
+                Google Sheets Sync
+              </span>
+            </div>
+
+            <div class="space-y-2 pt-1">
+              <button onclick="openVideoModal('https://player.vimeo.com/video/1229127932')" class="w-full py-3 rounded-xl bg-royal-turquoise-light hover:bg-royal-turquoise text-royal-deep hover:text-white border border-royal-turquoise font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                <i class="fa-solid fa-play text-royal-turquoise"></i>
+                <span>Watch Free Language A Session Preview</span>
+              </button>
+            </div>
+
+            <!-- Deliverables Box -->
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2">
+              <span class="font-bold text-royal-deep block">What You Receive Immediately:</span>
+              <ul class="space-y-1.5 text-slate-600">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> 20 Line-by-Line Recorded Sessions</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Complete Annotated Anthology Booklet (PDF)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Question 4 Comparison Templates & Transactional Models</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Examiner Mark-Scheme Walkthroughs</li>
+              </ul>
+            </div>
+
+            <div class="border-2 border-royal-turquoise rounded-2xl overflow-hidden bg-royal-turquoise-soft/30">
+              <button onclick="toggleAccordion('lang-curriculum')" class="w-full p-4 flex items-center justify-between text-left font-heading font-bold text-xs sm:text-sm text-royal-deep bg-white hover:bg-royal-turquoise-light transition cursor-pointer">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-royal-turquoise"></i>
+                  <span>View Full Language A Curriculum Index</span>
+                </span>
+                <i class="fa-solid fa-chevron-down text-royal-turquoise transition-transform duration-300" id="icon-lang-curriculum"></i>
+              </button>
+              <div id="lang-curriculum" class="hidden p-4 space-y-2 text-xs text-slate-700 border-t border-royal-turquoise bg-white">
+                <div class="p-2 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Module 1: Non-Fiction Anthology Recorded Sessions</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">6 Sessions</span>
+                </div>
+                <div class="p-2 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Module 2: Question 4 & 5 Blueprints</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">4 Sessions</span>
+                </div>
+                <div class="p-2 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Module 3: Transactional Writing Samples</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">5 Sessions</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-6 border-t border-slate-100 mt-6">
+            <button onclick="openEnrollModal('Edexcel IGCSE Language A (4EA1) Recorded Sessions', document.getElementById('price-language').innerText)" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 text-center cursor-pointer">
+              <i class="fa-solid fa-bag-shopping text-base"></i>
+              <span>Enroll Now & Get Instant Access</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PACKAGE 3: EDEXCEL IGCSE LITERATURE (4ET1) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise shadow-soft-card flex flex-col justify-between">
+          <div class="space-y-5">
+            <div class="flex items-center justify-between">
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-royal-deep text-white">
+                Pearson Edexcel IGCSE &bull; 24 Recorded Sessions
+              </span>
+              <span class="text-xs font-bold text-royal-turquoise bg-royal-turquoise-light px-3 py-1 rounded-full border border-royal-turquoise">
+                Instant Video + PDFs
+              </span>
+            </div>
+
+            <div>
+              <h3 class="font-heading font-bold text-2xl text-royal-deep">
+                Literature (4ET1) Recorded Sessions
+              </h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Line-by-line analyses of Pearson Poetry Anthology, John Steinbeck's <em>Of Mice and Men</em>, and Level 5 comparative essay models.
+              </p>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-royal-turquoise-soft rounded-2xl border-2 border-royal-turquoise shadow-sm">
+              <div>
+                <span class="text-[11px] font-bold text-royal-turquoise uppercase tracking-wider block">Investment Fee (Live Sync)</span>
+                <span id="price-literature" class="font-heading font-black text-2xl sm:text-3xl text-royal-deep">2,800 EGP</span>
+                <span class="text-xs font-bold text-slate-500"> / Term Access</span>
+              </div>
+              <span class="px-3 py-1.5 rounded-xl bg-white text-royal-deep text-xs font-black border border-royal-turquoise shadow-sm">
+                Google Sheets Sync
+              </span>
+            </div>
+
+            <div class="space-y-2 pt-1">
+              <button onclick="openVideoModal('https://www.youtube.com/embed/rAkx85gl79Q')" class="w-full py-3 rounded-xl bg-royal-turquoise-light hover:bg-royal-turquoise text-royal-deep hover:text-white border border-royal-turquoise font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                <i class="fa-solid fa-play text-royal-turquoise"></i>
+                <span>Watch Free Literature Session Preview</span>
+              </button>
+            </div>
+
+            <!-- Deliverables Box -->
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2">
+              <span class="font-bold text-royal-deep block">What You Receive Immediately:</span>
+              <ul class="space-y-1.5 text-slate-600">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> 24 High-Definition Recorded Sessions</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Level 5 Model Answers for Poetry & <em>Of Mice and Men</em> (PDF)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> P.E.E.E.L Paragraph Deconstruction Worksheets</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Exam Pacing & Comparative Essay Frameworks</li>
+              </ul>
+            </div>
+
+            <div class="border-2 border-royal-turquoise rounded-2xl overflow-hidden bg-royal-turquoise-soft/30">
+              <button onclick="toggleAccordion('lit-curriculum')" class="w-full p-4 flex items-center justify-between text-left font-heading font-bold text-xs sm:text-sm text-royal-deep bg-white hover:bg-royal-turquoise-light transition cursor-pointer">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-royal-turquoise"></i>
+                  <span>View Full Literature Curriculum Index</span>
+                </span>
+                <i class="fa-solid fa-chevron-down text-royal-turquoise transition-transform duration-300" id="icon-lit-curriculum"></i>
+              </button>
+              <div id="lit-curriculum" class="hidden p-4 space-y-2 text-xs text-slate-700 border-t border-royal-turquoise bg-white">
+                <div class="p-2 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Module 1: P.E.E.L Methods & Terminology</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">4 Sessions</span>
+                </div>
+                <div class="p-2 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Module 2: Pearson Poetry Anthology Analyses</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">8 Sessions</span>
+                </div>
+                <div class="p-2 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Module 3: Of Mice and Men Macro-Overview</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">7 Sessions</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-6 border-t border-slate-100 mt-6">
+            <button onclick="openEnrollModal('Edexcel IGCSE Literature (4ET1) Recorded Sessions', document.getElementById('price-literature').innerText)" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 text-center cursor-pointer">
+              <i class="fa-solid fa-bag-shopping text-base"></i>
+              <span>Enroll Now & Get Instant Access</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PACKAGE 4: PRIMARY CHECKPOINT ENGLISH (STAGE 6) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise shadow-soft-card flex flex-col justify-between">
+          <div class="space-y-5">
+            <div class="flex items-center justify-between">
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-royal-deep text-white">
+                Cambridge Stage 6 &bull; 16 Recorded Sessions
+              </span>
+              <span class="text-xs font-bold text-royal-turquoise bg-royal-turquoise-light px-3 py-1 rounded-full border border-royal-turquoise">
+                Instant Video + PDFs
+              </span>
+            </div>
+
+            <div>
+              <h3 class="font-heading font-bold text-2xl text-royal-deep">
+                Primary Checkpoint English Recorded Sessions
+              </h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Reading comprehension context clues, figurative language mastery, punctuation rules, and creative narrative crafting.
+              </p>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-royal-turquoise-soft rounded-2xl border-2 border-royal-turquoise shadow-sm">
+              <div>
+                <span class="text-[11px] font-bold text-royal-turquoise uppercase tracking-wider block">Investment Fee (Live Sync)</span>
+                <span id="price-primary" class="font-heading font-black text-2xl sm:text-3xl text-royal-deep">3,200 EGP</span>
+                <span class="text-xs font-bold text-slate-500"> / Term Access</span>
+              </div>
+              <span class="px-3 py-1.5 rounded-xl bg-white text-royal-deep text-xs font-black border border-royal-turquoise shadow-sm">
+                Google Sheets Sync
+              </span>
+            </div>
+
+            <div class="space-y-2 pt-1">
+              <button onclick="openVideoModal('https://www.youtube.com/embed/rAkx85gl79Q')" class="w-full py-3 rounded-xl bg-royal-turquoise-light hover:bg-royal-turquoise text-royal-deep hover:text-white border border-royal-turquoise font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                <i class="fa-solid fa-play text-royal-turquoise"></i>
+                <span>Watch Free Primary Session Preview</span>
+              </button>
+            </div>
+
+            <!-- Deliverables Box -->
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs space-y-2">
+              <span class="font-bold text-royal-deep block">What You Receive Immediately:</span>
+              <ul class="space-y-1.5 text-slate-600">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> 16 Comprehensive Recorded Sessions</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Story Arc Structuring & Descriptive Samples (PDF)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> SPaG (Spelling, Punctuation & Grammar) High-Score Drills</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-royal-turquoise"></i> Cambridge Past Paper Simulations</li>
+              </ul>
+            </div>
+
+            <div class="border-2 border-royal-turquoise rounded-2xl overflow-hidden bg-royal-turquoise-soft/30">
+              <button onclick="toggleAccordion('primary-curriculum')" class="w-full p-4 flex items-center justify-between text-left font-heading font-bold text-xs sm:text-sm text-royal-deep bg-white hover:bg-royal-turquoise-light transition cursor-pointer">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-royal-turquoise"></i>
+                  <span>View Primary Recorded Sessions Index</span>
+                </span>
+                <i class="fa-solid fa-chevron-down text-royal-turquoise transition-transform duration-300" id="icon-primary-curriculum"></i>
+              </button>
+              <div id="primary-curriculum" class="hidden p-4 space-y-2 text-xs text-slate-700 border-t border-royal-turquoise bg-white">
+                <div class="p-2 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Module 1: Comprehension & Figurative Language</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">4 Sessions</span>
+                </div>
+                <div class="p-2 bg-royal-turquoise-soft rounded-lg flex items-center justify-between">
+                  <span>Module 2: Creative Narrative Crafting</span>
+                  <span class="text-[10px] font-bold text-royal-turquoise">4 Sessions</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-6 border-t border-slate-100 mt-6">
+            <button onclick="openEnrollModal('Primary Checkpoint English Recorded Sessions', document.getElementById('price-primary').innerText)" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 text-center cursor-pointer">
+              <i class="fa-solid fa-bag-shopping text-base"></i>
+              <span>Enroll Now & Get Instant Access</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PACKAGE 5: AMERICAN DIPLOMA (EST / SAT) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-royal-gold shadow-soft-card flex flex-col justify-between">
+          <div class="space-y-5">
+            <div class="flex items-center justify-between">
+              <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-royal-gold">
+                American Diploma &bull; 26 Recorded Sessions
+              </span>
+              <span class="text-xs font-bold text-amber-800 bg-royal-gold-light px-3 py-1 rounded-full border border-royal-gold">
+                Instant Video + PDFs
+              </span>
+            </div>
+
+            <div>
+              <h3 class="font-heading font-bold text-2xl text-royal-deep">
+                American Diploma (EST / SAT) Recorded Sessions
+              </h3>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                EST & SAT English: passage mapping, rapid question elimination, grammar mechanics, and high-scoring speed drills.
+              </p>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-royal-gold-light/60 rounded-2xl border-2 border-royal-gold shadow-sm">
+              <div>
+                <span class="text-[11px] font-bold text-amber-900 uppercase tracking-wider block">Investment Fee (Live Sync)</span>
+                <span id="price-est" class="font-heading font-black text-2xl sm:text-3xl text-royal-deep">2,600 EGP</span>
+                <span class="text-xs font-bold text-slate-600"> / Round Access</span>
+              </div>
+              <span class="px-3 py-1.5 rounded-xl bg-white text-amber-900 text-xs font-black border border-royal-gold shadow-sm">
+                Google Sheets Sync
+              </span>
+            </div>
+
+            <div class="space-y-2 pt-1">
+              <button onclick="openVideoModal('https://www.youtube.com/embed/rAkx85gl79Q')" class="w-full py-3 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-royal-gold font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                <i class="fa-solid fa-play text-amber-600"></i>
+                <span>Watch Free EST/SAT Session Preview</span>
+              </button>
+            </div>
+
+            <!-- Deliverables Box -->
+            <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200 text-xs space-y-2">
+              <span class="font-bold text-amber-900 block">What You Receive Immediately:</span>
+              <ul class="space-y-1.5 text-slate-600">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> 26 Timed Speed & Accuracy Recorded Sessions</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Complete Reading Passage Mapping Cheatsheet (PDF)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Master Grammar Rules Breakdown (Modifiers & Parallelism)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Real Test Elimination Drills</li>
+              </ul>
+            </div>
+
+            <div class="border-2 border-royal-gold rounded-2xl overflow-hidden bg-royal-gold-light/30">
+              <button onclick="toggleAccordion('est-curriculum')" class="w-full p-4 flex items-center justify-between text-left font-heading font-bold text-xs sm:text-sm text-royal-deep bg-white hover:bg-amber-50 transition cursor-pointer">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-amber-600"></i>
+                  <span>View Full American Diploma Curriculum Index</span>
+                </span>
+                <i class="fa-solid fa-chevron-down text-amber-600 transition-transform duration-300" id="icon-est-curriculum"></i>
+              </button>
+              <div id="est-curriculum" class="hidden p-4 space-y-2 text-xs text-slate-700 border-t border-royal-gold bg-white">
+                <div class="p-2 bg-amber-50 rounded-lg flex items-center justify-between">
+                  <span>Module 1: EST & SAT Passage Mapping</span>
+                  <span class="text-[10px] font-bold text-amber-700">7 Sessions</span>
+                </div>
+                <div class="p-2 bg-amber-50 rounded-lg flex items-center justify-between">
+                  <span>Module 2: Grammar Mechanics & Elimination</span>
+                  <span class="text-[10px] font-bold text-amber-700">7 Sessions</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-6 border-t border-slate-100 mt-6">
+            <button onclick="openEnrollModal('American Diploma (EST / SAT) Recorded Sessions', document.getElementById('price-est').innerText)" class="w-full py-4 rounded-2xl bg-royal-gold hover:bg-royal-gold-hover text-royal-deep font-heading font-black text-sm shadow-glow-gold transition flex items-center justify-center gap-2 text-center cursor-pointer">
+              <i class="fa-solid fa-bag-shopping text-base"></i>
+              <span>Enroll Now & Get Instant Access</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ALL-INCLUSIVE PASS -->
+        <div class="bg-gradient-to-br from-royal-turquoise-light via-white to-royal-gold-light rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise flex flex-col justify-between shadow-soft-card">
+          <div class="space-y-5">
+            <div class="w-12 h-12 rounded-2xl bg-royal-turquoise text-white flex items-center justify-center text-xl shadow-glow-cyan">
+              <i class="fa-solid fa-crown text-royal-gold"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-2xl text-royal-deep">
+                All-Inclusive Recorded Sessions Pass
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                Combine full access across all recorded session packages with companion PDF workbooks and direct diagnostic marking support from Mrs. Fatma Ramadan.
+              </p>
+            </div>
+            <ul class="text-xs sm:text-sm text-royal-deep font-semibold space-y-2">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-turquoise"></i> Unlimited 24/7 video replay access across all subjects</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-turquoise"></i> All downloadable PDF revision booklets included</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-royal-turquoise"></i> Dedicated WhatsApp marking desk with Mrs. Fatma</li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-royal-turquoise">
+            <button onclick="openEnrollModal('All-Inclusive Recorded Sessions Pass', 'Custom Academic Fee')" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 text-center cursor-pointer">
+              <i class="fa-solid fa-crown text-royal-gold text-base"></i>
+              <span>Consult & Unlock All-Inclusive Pass</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Live Masterclasses Section -->
+  <section id="courses" class="py-20 bg-royal-turquoise-soft border-b border-royal-turquoise">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-royal-deep text-xs font-bold mb-3 border border-royal-turquoise shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-royal-turquoise animate-ping"></span>
+          Live Interactive Masterclasses
+        </div>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-royal-deep tracking-tight">
+          Live Cohorts & Diagnostic Sessions
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2 max-w-2xl">
+          Join small weekly live interactive sessions with Mrs. Fatma Ramadan for real-time textual deconstruction and essay feedback.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Course 1 -->
+        <div class="bg-white rounded-3xl p-6 border-2 border-royal-turquoise flex flex-col justify-between hover:border-royal-turquoise-dark hover:shadow-soft-card transition duration-300">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-royal-turquoise text-white">
+                Edexcel IGCSE
+              </span>
+              <span class="text-xs font-bold text-royal-deep bg-royal-gold px-2.5 py-0.5 rounded-full border border-royal-gold">
+                Syllabus 4ET1
+              </span>
+            </div>
+
+            <div>
+              <h3 class="font-heading font-bold text-xl text-royal-deep">
+                English Literature Live Cohorts
+              </h3>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                Poetry Anthology comparison, unseen verse deconstruction, John Steinbeck's <em>Of Mice and Men</em>, and Level 5 mark scheme modeling.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-5 space-y-2">
+            <a href="https://wa.me/201014786466?text=Hello%20Mrs.%20Fatma,%20I%20want%20to%20book%20Live%20Literature%20Masterclasses." target="_blank" class="w-full py-3 rounded-xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-bold text-xs shadow-glow-cyan transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-users text-white"></i>
+              <span>Book Live Masterclass Sessions</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="bg-white rounded-3xl p-6 border-2 border-royal-turquoise flex flex-col justify-between hover:border-royal-turquoise-dark hover:shadow-soft-card transition duration-300">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-royal-turquoise text-white">
+                Edexcel IGCSE
+              </span>
+              <span class="text-xs font-bold text-royal-deep bg-royal-gold px-2.5 py-0.5 rounded-full border border-royal-gold">
+                Syllabus 4EA1
+              </span>
+            </div>
+
+            <div>
+              <h3 class="font-heading font-bold text-xl text-royal-deep">
+                English Language A Live Cohorts
+              </h3>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                Non-fiction textual evaluation, comparative essays, transactional writing frameworks, and timed exam pacing.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-5 space-y-2">
+            <a href="https://wa.me/201014786466?text=Hello%20Mrs.%20Fatma,%20I%20want%20to%20book%20Live%20Language%20A%20Masterclasses." target="_blank" class="w-full py-3 rounded-xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-bold text-xs shadow-glow-cyan transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-users text-white"></i>
+              <span>Book Live Masterclass Sessions</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Diagnostic Consultation -->
+        <div class="bg-white rounded-3xl p-6 border-2 border-dashed border-royal-turquoise flex flex-col justify-between hover:shadow-soft-card transition duration-300">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-royal-turquoise-light text-royal-turquoise border border-royal-turquoise">
+                Diagnostic 1-on-1
+              </span>
+              <span class="text-xs font-bold text-royal-turquoise font-mono">
+                Direct Placement
+              </span>
+            </div>
+
+            <div>
+              <h3 class="font-heading font-bold text-xl text-royal-deep">
+                Diagnostic Placement Session
+              </h3>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                Book a private placement diagnostic with Mrs. Fatma Ramadan to pinpoint skill gaps and recommend the best live or recorded cohort.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-5">
+            <a href="https://wa.me/201014786466?text=Hello%20Mrs.%20Fatma,%20I%20would%20like%20to%20schedule%20a%20Diagnostic%20Session." target="_blank" class="w-full py-3.5 rounded-xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-bold text-xs shadow-glow-cyan transition flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>Schedule Diagnostic Session</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Annotator -->
+  <section id="study-buddy" class="py-20 bg-white border-b border-royal-turquoise">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-royal-gold text-royal-deep text-xs font-black shadow-sm border border-royal-gold">
+          <span>👑 Grade 9 Study Buddy &bull; Examiner Interactive Engine</span>
+        </div>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-royal-deep">
+          Interactive Grade 9 Examiner Annotator
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Click on any highlighted phrase below to reveal Mrs. Fatma Ramadan's direct marking commentary and AO2 criteria breakdown for Of Mice and Men.
+        </p>
+      </div>
+
+      <div class="bg-royal-turquoise-soft rounded-3xl p-6 md:p-8 shadow-soft-card border-2 border-royal-turquoise">
+        
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-100">
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="filterAnnotation('all')" id="btn-flt-all" class="px-4 py-1.5 rounded-xl text-xs font-bold transition bg-royal-turquoise text-white shadow-sm cursor-pointer">
+              Show All Elements
+            </button>
+            <button onclick="filterAnnotation('imagery')" id="btn-flt-imagery" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-white text-royal-deep border border-royal-turquoise hover:bg-royal-turquoise-soft cursor-pointer">
+              🔍 Zoomorphic Imagery
+            </button>
+            <button onclick="filterAnnotation('structure')" id="btn-flt-structure" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-white text-amber-900 border border-royal-gold hover:bg-amber-100 cursor-pointer">
+              📐 Circular Structure
+            </button>
+          </div>
+
+          <span class="text-xs font-mono font-bold text-royal-turquoise bg-white px-3 py-1 rounded-lg border border-royal-turquoise">
+            Syllabus: Edexcel 4ET1 &bull; Of Mice and Men
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
+          <div class="lg:col-span-7 bg-white p-6 rounded-2xl border border-royal-turquoise font-serif text-slate-800 text-base leading-relaxed space-y-4 shadow-sm">
+            <p>
+              In dramatizing the predatory vulnerability of migrant labor, Steinbeck depicts Lennie's physical presence through 
+              <span class="study-chip study-chip-turquoise annot-target" data-type="imagery" onclick="showCriterion('imagery1')">
+                "bear-like animalistic kinetic verbs"
+              </span>, 
+              instantly establishing an instinctual innocence unsuited to a harsh, Darwinian economic system.
+            </p>
+            <p>
+              <span class="study-chip study-chip-gold annot-target" data-type="structure" onclick="showCriterion('struct1')">
+                By beginning and concluding the novella by the verdant pool of the Salinas River:
+              </span>
+              <span class="study-chip study-chip-turquoise annot-target" data-type="imagery" onclick="showCriterion('peel1')">
+                "live off the fatta the lan'."
+              </span>
+            </p>
+            <p>
+              Steinbeck constructs an inescapable circular narrative frame, underscoring that for dispossessed workers during the Great Depression, the pastoral dream was fated to end in tragedy.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5 bg-white rounded-2xl p-6 border-2 border-royal-turquoise flex flex-col justify-between shadow-sm">
+            <div class="space-y-4">
+              <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-royal-turquoise">
+                <i class="fa-solid fa-feather-pointed"></i>
+                <span id="annot-badge">Examiner Marking Note</span>
+              </div>
+              
+              <h4 id="annot-title" class="font-heading font-bold text-xl text-royal-deep">
+                Click highlighted text to inspect criteria
+              </h4>
+              
+              <p id="annot-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Grade 9 responses seamlessly connect zoomorphic characterization with Steinbeck's macro-critique of the American Dream. Avoid isolated quotes without thematic justification.
+              </p>
+
+              <div class="pt-2">
+                <span id="annot-level" class="inline-block font-mono text-[11px] px-3 py-1 rounded-lg bg-royal-gold-light text-amber-900 font-bold border border-royal-gold">
+                  Criterion: AO2 Language & Structure (Level 5)
+                </span>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <button onclick="toggleAudio()" id="audio-btn" class="w-10 h-10 rounded-xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white flex items-center justify-center transition shadow-glow-cyan cursor-pointer">
+                  <i class="fa-solid fa-play ml-0.5" id="audio-icon"></i>
+                </button>
+                <div>
+                  <p class="text-xs font-bold text-royal-deep">Mrs. Fatma's Examiner Tip</p>
+                  <p id="audio-text" class="text-[11px] text-slate-500">Click to listen to examiner breakdown</p>
+                </div>
+              </div>
+              <span class="text-xs font-mono font-bold text-royal-turquoise">0:30</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Line-by-Line Essay Marking Portal -->
+  <section id="marking" class="py-20 bg-royal-turquoise-soft relative border-b border-royal-turquoise">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white text-royal-turquoise text-xs font-black border border-royal-turquoise">
+          <span>Diagnostic Examiner Feedback</span>
+        </div>
+        <h2 class="font-heading font-black text-3xl sm:text-4xl text-royal-deep">
+          Line-by-Line Essay Marking Portal
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base">
+          Submit your practice essay response below to receive line-by-line annotations and Level 5 mark band scoring directly from Mrs. Fatma Ramadan.
+        </p>
+      </div>
+
+      <div class="bg-white text-royal-deep rounded-3xl p-6 sm:p-8 max-w-3xl mx-auto shadow-soft-card border-2 border-royal-turquoise">
+        <div class="flex items-center justify-between mb-5">
+          <div>
+            <h3 class="font-heading font-bold text-xl text-royal-deep">Submit Response for Examiner Evaluation</h3>
+            <p class="text-xs text-slate-600">Submissions go straight into Mrs. Fatma's review desk.</p>
+          </div>
+          <span class="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-royal-turquoise-light text-royal-turquoise border border-royal-turquoise">
+            Direct Review Desk
+          </span>
+        </div>
+
+        <form onsubmit="handleStudentSubmission(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-royal-deep mb-1">Student Full Name</label>
+              <input type="text" id="sub-name" required placeholder="e.g. Mariam Tarek" class="w-full px-4 py-2.5 rounded-xl border border-royal-turquoise text-xs focus:outline-none focus:border-royal-turquoise-dark bg-royal-turquoise-soft/40">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-royal-deep mb-1">WhatsApp Contact</label>
+              <input type="tel" id="sub-phone" required placeholder="010..." class="w-full px-4 py-2.5 rounded-xl border border-royal-turquoise text-xs focus:outline-none focus:border-royal-turquoise-dark bg-royal-turquoise-soft/40">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-royal-deep mb-1">Course & Syllabus</label>
+              <select id="sub-course" class="w-full px-4 py-2.5 rounded-xl border border-royal-turquoise text-xs focus:outline-none focus:border-royal-turquoise-dark bg-royal-turquoise-soft/40">
+                <option value="Lower Secondary Checkpoint (0861) Recorded Sessions">Lower Secondary Checkpoint (0861) Recorded Sessions - 2000 LE</option>
+                <option value="Edexcel IGCSE Literature (4ET1) Recorded Sessions">Edexcel IGCSE Literature (4ET1) Recorded Sessions</option>
+                <option value="Edexcel IGCSE Language A (4EA1) Recorded Sessions">Edexcel IGCSE Language A (4EA1) Recorded Sessions</option>
+                <option value="Primary Checkpoint English Recorded Sessions">Primary Checkpoint English Recorded Sessions</option>
+                <option value="American Diploma / EST English Recorded Sessions">American Diploma / EST English Recorded Sessions</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-royal-deep mb-1">Essay Title or Prompt</label>
+              <input type="text" id="sub-title" required placeholder="e.g. Checkpoint Paper 2 Narrative Writing" class="w-full px-4 py-2.5 rounded-xl border border-royal-turquoise text-xs focus:outline-none focus:border-royal-turquoise-dark bg-royal-turquoise-soft/40">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-royal-deep mb-1">Paste Your Essay Text</label>
+            <textarea id="sub-text" rows="5" required placeholder="Type or paste your completed paragraphs here..." class="w-full px-4 py-2.5 rounded-xl border border-royal-turquoise text-xs focus:outline-none focus:border-royal-turquoise-dark bg-royal-turquoise-soft/40 font-serif leading-relaxed"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-bold text-sm shadow-glow-cyan transition cursor-pointer flex items-center justify-center gap-2">
+            <i class="fa-solid fa-paper-plane text-xs"></i>
+            <span>Submit Essay for Examiner Review</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Video Modal for Samples -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-5 bg-royal-deep/80 backdrop-blur-md">
+    <div class="bg-white rounded-3xl max-w-3xl w-full border-4 border-royal-turquoise shadow-float relative overflow-hidden flex flex-col text-royal-deep">
+      <div class="bg-royal-turquoise text-white p-4 flex items-center justify-between">
+        <h3 class="font-heading font-bold text-base">Recorded Session Sample Preview</h3>
+        <button onclick="closeVideoModal()" class="p-2 rounded-xl bg-white/20 hover:bg-white/30 text-white transition cursor-pointer">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div class="p-4 bg-black aspect-video relative">
+        <iframe id="sample-iframe" class="w-full h-full" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT & ENROLL MODAL (FIRST RATE STYLE) -->
+  <div id="enroll-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-royal-deep/80 backdrop-blur-md">
+    <div class="bg-white rounded-3xl max-w-md w-full border-4 border-royal-turquoise shadow-float relative overflow-hidden p-6 sm:p-8 text-royal-deep">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-wider text-royal-turquoise block">Instant Enrollment</span>
+          <h3 class="font-heading font-black text-xl text-royal-deep" id="modal-course-title">Checkout</h3>
+        </div>
+        <button onclick="closeEnrollModal()" class="w-9 h-9 rounded-xl bg-royal-turquoise-light text-royal-turquoise hover:bg-royal-turquoise hover:text-white transition flex items-center justify-center cursor-pointer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="py-4 space-y-3">
+        <div class="p-4 bg-royal-turquoise-soft rounded-2xl border border-royal-turquoise flex items-center justify-between">
+          <div>
+            <span class="text-xs text-slate-500 font-bold block">Recorded Sessions Fee</span>
+            <span class="font-heading font-black text-2xl text-royal-deep" id="modal-course-fee">2,000 LE</span>
+          </div>
+          <div class="text-right">
+            <span class="text-[10px] font-black uppercase text-white bg-royal-turquoise px-2 py-0.5 rounded-full">Vodafone / InstaPay</span>
+            <span class="text-xs font-mono font-bold text-royal-deep block mt-1">01014786466</span>
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-600 space-y-1 bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <p class="font-bold text-royal-deep">Instant 2-Step Enrollment:</p>
+          <p>1. Transfer the fee via <strong>InstaPay or Vodafone Cash</strong> to <strong>01014786466</strong>.</p>
+          <p>2. Enter student details below to receive full recorded session access and downloadable PDFs immediately via WhatsApp.</p>
+        </div>
+
+        <div class="space-y-3 pt-2">
+          <div>
+            <label class="block text-xs font-bold text-royal-deep mb-1">Student Full Name</label>
+            <input type="text" id="enroll-name" placeholder="e.g. Adam Mohamed" class="w-full px-4 py-2.5 rounded-xl border border-royal-turquoise text-xs focus:outline-none focus:border-royal-turquoise-dark bg-royal-turquoise-soft/30">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-royal-deep mb-1">Student / Guardian WhatsApp</label>
+            <input type="tel" id="enroll-phone" placeholder="010..." class="w-full px-4 py-2.5 rounded-xl border border-royal-turquoise text-xs focus:outline-none focus:border-royal-turquoise-dark bg-royal-turquoise-soft/30">
+          </div>
+
+          <button onclick="submitEnrollViaWhatsApp()" class="w-full py-4 rounded-xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-bold text-sm shadow-glow-cyan transition cursor-pointer flex items-center justify-center gap-2 mt-2">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Confirm & Activate on WhatsApp</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white text-royal-deep py-14 border-t-2 border-royal-turquoise">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col items-center text-center space-y-4 mb-10">
+        <div class="w-14 h-14 rounded-2xl bg-royal-turquoise flex items-center justify-center shadow-glow-cyan">
+          <svg class="w-10 h-10 text-white" viewBox="0 0 200 160" fill="none">
+            <circle cx="28" cy="62" r="7" stroke="white" stroke-width="7" fill="none"/>
+            <circle cx="64" cy="46" r="7" stroke="white" stroke-width="7" fill="none"/>
+            <circle cx="100" cy="26" r="8" stroke="#FFB800" stroke-width="8" fill="none"/>
+            <circle cx="136" cy="46" r="7" stroke="white" stroke-width="7" fill="none"/>
+            <circle cx="172" cy="62" r="7" stroke="white" stroke-width="7" fill="none"/>
+            <path d="M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z" stroke="white" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+            <path d="M 52 138 C 82 147 118 147 148 138" stroke="white" stroke-width="7.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <h3 class="font-heading font-black text-2xl tracking-wide uppercase text-royal-deep">
+          ROYAL IG ENGLISH ACADEMY
+        </h3>
+        <p class="font-heading font-bold text-xs tracking-widest text-royal-turquoise uppercase">
+          BY: MRS. FATMA RAMADAN
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-y border-slate-100 text-xs text-center md:text-left items-start">
+        <div class="space-y-2">
+          <h5 class="font-bold text-royal-turquoise uppercase tracking-wider text-sm">Direct WhatsApp Desk</h5>
+          <p class="text-royal-deep font-black text-sm" id="footer-phone">01014786466</p>
+          <p class="text-slate-500">Live cohorts booking & Recorded Sessions instant access.</p>
+        </div>
+
+        <div class="space-y-2">
+          <h5 class="font-bold text-royal-turquoise uppercase tracking-wider text-sm">Academic Syllabuses</h5>
+          <ul class="space-y-1 text-slate-600">
+            <li>Lower Secondary Checkpoint (0861) Recorded Sessions - 2000 LE</li>
+            <li>Edexcel IGCSE Literature (4ET1) Recorded Sessions</li>
+            <li>Edexcel IGCSE Language A (4EA1) Recorded Sessions</li>
+            <li>Primary Checkpoint English (Stage 6) Recorded Sessions</li>
+            <li>American Diploma / EST English Recorded Sessions</li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <h5 class="font-bold text-royal-turquoise uppercase tracking-wider text-sm">Direct Contact</h5>
+          <p class="text-slate-500">Email: <a href="mailto:fatma.ramadan1191@yahoo.com" class="font-bold text-royal-deep hover:underline">fatma.ramadan1191@yahoo.com</a></p>
+          <a href="https://wa.me/201014786466" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-bold text-xs shadow-glow-cyan transition mt-1">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
+            <span>Chat via WhatsApp (01014786466)</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-8 text-center text-xs text-slate-400">
+        &copy; 2026 ROYAL IG ENGLISH ACADEMY BY: MRS. FATMA RAMADAN. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-shelf" class="fixed bottom-5 right-5 z-50 space-y-2 pointer-events-none"></div>
+
+  <!-- SCRIPTS -->
+  <script>
+    const sheetCsvUrl = 'https://docs.google.com/spreadsheets/d/1mdPF2UB1QyVza58G1iaol5V-OoBnX-M5T-8AtwAJsfE/gviz/tq?tqx=out:csv';
+
+    async function syncPricesFromGoogleSheet() {
+      try {
+        const response = await fetch(sheetCsvUrl);
+        const data = await response.text();
+        const rows = data.split('\n');
+        
+        const settings = {};
+        rows.forEach(row => {
+          const cols = row.split(',').map(c => c.replace(/^"|"$/g, '').trim());
+          if (cols.length >= 2) {
+            settings[cols[0]] = cols[1];
+          }
+        });
+
+        if (settings['price_language']) document.getElementById('price-language').innerText = settings['price_language'];
+        if (settings['price_literature']) document.getElementById('price-literature').innerText = settings['price_literature'];
+        if (settings['price_primary']) document.getElementById('price-primary').innerText = settings['price_primary'];
+        if (settings['price_est']) document.getElementById('price-est').innerText = settings['price_est'];
+
+        if (settings['phone']) {
+          const phone = settings['phone'];
+          document.getElementById('nav-phone').innerText = phone;
+          document.getElementById('footer-phone').innerText = phone;
+        }
+      } catch (e) {
+        if(document.getElementById('price-language')) document.getElementById('price-language').innerText = '3,800 EGP';
+        if(document.getElementById('price-literature')) document.getElementById('price-literature').innerText = '2,800 EGP';
+        if(document.getElementById('price-primary')) document.getElementById('price-primary').innerText = '3,200 EGP';
+        if(document.getElementById('price-est')) document.getElementById('price-est').innerText = '2,600 EGP';
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', syncPricesFromGoogleSheet);
+
+    function toggleAccordion(id) {
+      const el = document.getElementById(id);
+      const icon = document.getElementById(`icon-${id}`);
+      el.classList.toggle('hidden');
+      if (icon) icon.classList.toggle('rotate-180');
+    }
+
+    function openVideoModal(url) {
+      const modal = document.getElementById('video-modal');
+      const iframe = document.getElementById('sample-iframe');
+      iframe.src = `${url}?autoplay=1`;
+      modal.classList.remove('hidden');
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('video-modal');
+      const iframe = document.getElementById('sample-iframe');
+      iframe.src = "";
+      modal.classList.add('hidden');
+    }
+
+    // Modal Enrollment Functions
+    let selectedCourse = 'Lower Secondary Checkpoint (0861) Recorded Sessions';
+    let selectedFee = '2,000 LE';
+
+    function openEnrollModal(courseName, fee) {
+      selectedCourse = courseName;
+      selectedFee = fee;
+      document.getElementById('modal-course-title').innerText = courseName;
+      document.getElementById('modal-course-fee').innerText = fee;
+      document.getElementById('enroll-modal').classList.remove('hidden');
+    }
+
+    function closeEnrollModal() {
+      document.getElementById('enroll-modal').classList.add('hidden');
+    }
+
+    function submitEnrollViaWhatsApp() {
+      const name = document.getElementById('enroll-name').value.trim();
+      const phone = document.getElementById('enroll-phone').value.trim();
+
+      if (!name || !phone) {
+        alert('Please fill in student name and phone number.');
+        return;
+      }
+
+      const msg = encodeURIComponent(`Hello Mrs. Fatma Ramadan,\n\nI would like to enroll in:\n📚 Package: ${selectedCourse}\n💰 Fee: ${selectedFee}\n\n👤 Student Name: ${name}\n📱 WhatsApp Contact: ${phone}\n\nI am attaching the payment receipt for instant recorded session access.`);
+      window.open(`https://wa.me/201014786466?text=${msg}`, '_blank');
+      closeEnrollModal();
+      showToast("Redirecting to WhatsApp for instant activation...");
+    }
+
+    const studyData = {
+      imagery1: {
+        badge: "AO2: Zoomorphic Imagery",
+        title: "Animalistic Characterization",
+        desc: "Mrs. Fatma Ramadan notes: Steinbeck’s zoomorphic verbs ('bear-like') highlight Lennie’s instinctual nature, presenting him as unsuited to a predatory capitalistic world.",
+        level: "Criterion: AO2 Language & Structure (Level 5)"
+      },
+      struct1: {
+        title: "Circular Narrative Framing",
+        badge: "AO2: Structural Pacing",
+        desc: "Beginning and ending the novella in the identical tranquil natural setting exposes the inevitability of the characters' tragic fate.",
+        level: "Criterion: AO2 Structural Macro-Intent (Level 5)"
+      },
+      peel1: {
+        title: "Micro-Quotation Embedding",
+        badge: "AO1: Embedded Evidence",
+        desc: "The phrase is concise and seamlessly woven into the syntactic rhythm of the student's own sentence.",
+        level: "Criterion: AO1 Textual Synthesis Standard"
+      }
+    };
+
+    function showCriterion(key) {
+      const item = studyData[key];
+      if (!item) return;
+      document.getElementById('annot-badge').innerText = item.badge;
+      document.getElementById('annot-title').innerText = item.title;
+      document.getElementById('annot-desc').innerText = item.desc;
+      document.getElementById('annot-level').innerText = item.level;
+      showToast(`Selected: ${item.title}`);
+    }
+
+    function filterAnnotation(type) {
+      const targets = document.querySelectorAll('.annot-target');
+      const buttons = ['all', 'imagery', 'structure'];
+      buttons.forEach(b => {
+        const el = document.getElementById(`btn-flt-${b}`);
+        if (el) el.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold transition bg-white text-royal-deep border border-royal-turquoise hover:bg-royal-turquoise-soft cursor-pointer";
+      });
+      const active = document.getElementById(`btn-flt-${type}`);
+      if (active) active.className = "px-4 py-1.5 rounded-xl text-xs font-bold transition bg-royal-turquoise text-white shadow-sm cursor-pointer";
+
+      targets.forEach(t => {
+        t.style.opacity = (type === 'all' || t.dataset.type === type) ? '1' : '0.25';
+      });
+    }
+
+    let isAudioPlaying = false;
+    function toggleAudio() {
+      const icon = document.getElementById('audio-icon');
+      const text = document.getElementById('audio-text');
+      if (!isAudioPlaying) {
+        isAudioPlaying = true;
+        icon.className = "fa-solid fa-stop";
+        text.innerText = "Playing Mrs. Fatma's 30s examiner tip...";
+        showToast("Playing audio tip breakdown");
+        setTimeout(() => {
+          isAudioPlaying = false;
+          icon.className = "fa-solid fa-play ml-0.5";
+          text.innerText = "Click to listen to examiner breakdown";
+        }, 3500);
+      } else {
+        isAudioPlaying = false;
+        icon.className = "fa-solid fa-play ml-0.5";
+        text.innerText = "Click to listen to examiner breakdown";
+      }
+    }
+
+    function handleStudentSubmission(e) {
+      e.preventDefault();
+      const name = document.getElementById('sub-name').value;
+      const course = document.getElementById('sub-course').value;
+      const title = document.getElementById('sub-title').value;
+
+      document.getElementById('sub-text').value = '';
+      showToast("🎉 Essay submitted directly to Mrs. Fatma's desk!");
+      
+      const msg = encodeURIComponent(`Hello Mrs. Fatma Ramadan, I submitted my essay on the website:\n- Name: ${name}\n- Course: ${course}\n- Title: ${title}`);
+      window.open(`https://wa.me/201014786466?text=${msg}`, '_blank');
+    }
+
+    function toggleMobileNav() {
+      document.getElementById('mobile-nav').classList.toggle('hidden');
+    }
+
+    function showToast(msg) {
+      const shelf = document.getElementById('toast-shelf');
+      const toast = document.createElement('div');
+      toast.className = "flex items-center gap-2 px-4 py-3 rounded-2xl bg-white text-royal-deep text-xs font-bold shadow-soft-card transition duration-300 transform translate-y-2 opacity-0 pointer-events-auto border-2 border-royal-turquoise";
+      toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-royal-turquoise"></span><span>${msg}</span>`;
+      shelf.appendChild(toast);
+      requestAnimationFrame(() => toast.classList.remove('translate-y-2', 'opacity-0'));
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3200);
+    }
+  </script>
+</body>
+</html>
