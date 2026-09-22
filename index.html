@@ -73,10 +73,10 @@
     .pulse-delight { animation: gentlePulse 2.5s infinite ease-in-out; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-royal-turquoise selection:text-white">
+<body class="min-h-screen flex flex-col selection:bg-royal-turquoise selection:text-white pt-24 sm:pt-28">
 
-  <!-- Floating Island Luxury Navbar -->
-  <header class="sticky top-4 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full transition-all duration-300">
+  <!-- Floating Island Luxury Navbar with Smart Auto-Hide -->
+  <header id="main-header" class="fixed top-4 inset-x-0 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full transition-transform duration-300 ease-in-out">
     <nav class="bg-white/90 backdrop-blur-lg border border-royal-turquoise/40 rounded-full shadow-soft-card hover:shadow-float px-5 sm:px-7 py-3 flex items-center justify-between gap-4 transition-all duration-300">
       
       <!-- Brand Logo -->
@@ -162,7 +162,7 @@
   </div>
 
   <!-- Hero Section -->
-  <header class="relative bg-gradient-to-b from-royal-turquoise-soft via-white to-royal-turquoise-soft pt-14 pb-16 lg:pt-18 lg:pb-24 border-b border-royal-turquoise overflow-hidden">
+  <section class="relative bg-gradient-to-b from-royal-turquoise-soft via-white to-royal-turquoise-soft pt-8 pb-16 lg:pt-12 lg:pb-24 border-b border-royal-turquoise overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
@@ -261,7 +261,7 @@
 
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- RECORDED SESSIONS SECTION -->
   <section id="recorded-sessions" class="py-20 bg-white border-b border-royal-turquoise relative">
@@ -1218,6 +1218,20 @@
 
   <!-- Scripts -->
   <script>
+    // Smart Navbar Hide on Scroll Down, Show on Scroll Up
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('main-header');
+
+    window.addEventListener('scroll', function() {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > lastScrollTop && currentScroll > 80) {
+        navbar.style.transform = 'translateY(-150%)';
+      } else {
+        navbar.style.transform = 'translateY(0)';
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    }, false);
+
     const sheetCsvUrl = 'https://docs.google.com/spreadsheets/d/1mdPF2UB1QyVza58G1iaol5V-OoBnX-M5T-8AtwAJsfE/gviz/tq?tqx=out:csv';
 
     async function syncPricesFromGoogleSheet() {
