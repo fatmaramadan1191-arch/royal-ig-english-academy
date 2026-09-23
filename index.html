@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -7,7 +6,7 @@
   <title>Royal IG English Academy | By: Mrs. Fatma Ramadan</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 160' fill='%2300C2CB'%3E%3Crect width='200' height='160' rx='35' fill='%2300C2CB'/%3E%3Ccircle cx='28' cy='62' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Ccircle cx='64' cy='46' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Ccircle cx='100' cy='26' r='8' stroke='%23FFB800' stroke-width='8' fill='none'/%3E%3Ccircle cx='136' cy='46' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Ccircle cx='172' cy='62' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Cpath d='M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z' stroke='white' stroke-width='7.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M 52 138 C 82 147 118 147 148 138' stroke='white' stroke-width='7.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 160' fill='%2345B8BE'%3E%3Crect width='200' height='160' rx='35' fill='%2345B8BE'/%3E%3Ccircle cx='28' cy='62' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Ccircle cx='64' cy='46' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Ccircle cx='100' cy='26' r='8' stroke='%23FFB800' stroke-width='8' fill='none'/%3E%3Ccircle cx='136' cy='46' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Ccircle cx='172' cy='62' r='7' stroke='white' stroke-width='7' fill='none'/%3E%3Cpath d='M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z' stroke='white' stroke-width='7.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M 52 138 C 82 147 118 147 148 138' stroke='white' stroke-width='7.5' stroke-linecap='round'/%3E%3C/svg%3E">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,9 +25,9 @@
         extend: {
           colors: {
             royal: {
-              turquoise: '#00C2CB',
-              'turquoise-hover': '#00A8B0',
-              'turquoise-dark': '#008C94',
+              turquoise: '#45B8BE',
+              'turquoise-hover': '#3aa3a9',
+              'turquoise-dark': '#2c8b91',
               'turquoise-light': '#E8FAFB',
               'turquoise-soft': '#F2FCFD',
               deep: '#0F373A',
@@ -45,10 +44,10 @@
             mono: ['"JetBrains Mono"', 'monospace']
           },
           boxShadow: {
-            'glow-cyan': '0 10px 25px -5px rgba(0, 194, 203, 0.35)',
+            'glow-cyan': '0 10px 25px -5px rgba(69, 184, 190, 0.35)',
             'glow-gold': '0 8px 25px -4px rgba(255, 184, 0, 0.45)',
-            'soft-card': '0 12px 35px -5px rgba(0, 194, 203, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
-            'float': '0 20px 40px -15px rgba(0, 194, 203, 0.25)'
+            'soft-card': '0 12px 35px -5px rgba(69, 184, 190, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
+            'float': '0 20px 40px -15px rgba(69, 184, 190, 0.25)'
           }
         }
       }
@@ -58,14 +57,14 @@
   <style>
     body { background-color: #F8FEFE; color: #0F373A; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
     .study-chip { cursor: pointer; padding: 2px 8px; border-radius: 6px; transition: all 0.2s ease; display: inline-block; margin: 1px 0; font-weight: 600; }
-    .study-chip-turquoise { background-color: #E8FAFB; border-bottom: 2.5px solid #00C2CB; color: #008C94; }
-    .study-chip-turquoise:hover, .study-chip-turquoise.active { background-color: #00C2CB; color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 194, 203, 0.3); }
+    .study-chip-turquoise { background-color: #E8FAFB; border-bottom: 2.5px solid #45B8BE; color: #2c8b91; }
+    .study-chip-turquoise:hover, .study-chip-turquoise.active { background-color: #45B8BE; color: #FFFFFF; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(69, 184, 190, 0.3); }
     .study-chip-gold { background-color: #FFF9E6; border-bottom: 2.5px solid #FFB800; color: #8C6200; }
     .study-chip-gold:hover, .study-chip-gold.active { background-color: #FFB800; color: #0F373A; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(255, 184, 0, 0.3); }
     ::-webkit-scrollbar { width: 7px; height: 7px; }
     ::-webkit-scrollbar-track { background: #F2FCFD; }
-    ::-webkit-scrollbar-thumb { background: #00C2CB; border-radius: 10px; }
-    ::-webkit-scrollbar-thumb:hover { background: #008C94; }
+    ::-webkit-scrollbar-thumb { background: #45B8BE; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2c8b91; }
     
     @keyframes gentlePulse {
       0%, 100% { transform: scale(1); }
@@ -76,20 +75,20 @@
     /* Light Royal Luxury LMS Classroom Styling */
     .royal-lms-shell {
       background: #FFFFFF;
-      border: 3px solid #00C2CB;
-      box-shadow: 0 25px 60px -10px rgba(0, 194, 203, 0.3), 0 10px 20px -5px rgba(255, 184, 0, 0.15);
+      border: 3px solid #45B8BE;
+      box-shadow: 0 25px 60px -10px rgba(69, 184, 190, 0.3), 0 10px 20px -5px rgba(255, 184, 0, 0.15);
     }
     .lms-player-container {
       background: #0F373A;
-      border: 2px solid #00C2CB;
-      box-shadow: 0 15px 35px -5px rgba(0, 194, 203, 0.35);
+      border: 2px solid #45B8BE;
+      box-shadow: 0 15px 35px -5px rgba(69, 184, 190, 0.35);
       border-radius: 20px;
     }
     .lms-item-active {
       background-color: #E8FAFB !important;
-      border-color: #00C2CB !important;
+      border-color: #45B8BE !important;
       border-left: 5px solid #FFB800 !important;
-      box-shadow: 0 4px 15px rgba(0, 194, 203, 0.15) !important;
+      box-shadow: 0 4px 15px rgba(69, 184, 190, 0.15) !important;
     }
   </style>
 </head>
@@ -99,9 +98,9 @@
   <header id="main-header" class="fixed top-4 inset-x-0 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full transition-transform duration-300 ease-in-out">
     <nav class="bg-white/90 backdrop-blur-lg border border-royal-turquoise/40 rounded-full shadow-soft-card hover:shadow-float px-5 sm:px-7 py-3 flex items-center justify-between gap-4 transition-all duration-300">
       
-      <!-- Brand Logo -->
+      <!-- Brand Logo with Unified Single Crown -->
       <a href="#" class="flex items-center gap-3 group shrink-0">
-        <div class="w-12 h-12 p-2 rounded-2xl bg-royal-turquoise flex items-center justify-center shadow-glow-cyan group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300 shrink-0">
+        <div class="w-12 h-12 p-2 rounded-2xl bg-[#45B8BE] flex items-center justify-center shadow-glow-cyan group-hover:scale-105 group-hover:rotate-2 transition-transform duration-300 shrink-0">
           <svg class="w-8 h-8 text-white" viewBox="0 0 200 160" fill="none">
             <circle cx="28" cy="62" r="7" stroke="white" stroke-width="7" fill="none"/>
             <circle cx="64" cy="46" r="7" stroke="white" stroke-width="7" fill="none"/>
@@ -237,7 +236,7 @@
             </div>
 
             <div class="relative rounded-2xl overflow-hidden bg-gradient-to-tr from-cyan-900 to-royal-deep aspect-video flex items-center justify-center border-2 border-royal-turquoise shadow-inner group-hover:border-royal-turquoise-dark transition-all">
-              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#00C2CB_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#45B8BE_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
               <button onclick="openVideoModal('https://player.vimeo.com/video/1229127932')" class="relative z-20 w-16 h-16 rounded-2xl bg-royal-turquoise text-white flex items-center justify-center shadow-glow-cyan hover:scale-110 group-hover:bg-royal-gold group-hover:text-royal-deep transition-all duration-300 cursor-pointer">
                 <i class="fa-solid fa-play text-xl ml-1"></i>
@@ -301,7 +300,17 @@
         <!-- PACKAGE 1: LOWER SECONDARY CHECKPOINT (2000 LE) -->
         <div class="bg-white rounded-3xl p-6 sm:p-8 border-4 border-royal-turquoise shadow-float flex flex-col justify-between relative ring-4 ring-royal-turquoise/10 hover:shadow-2xl transition duration-300">
           <div class="absolute -top-3.5 right-8 bg-gradient-to-r from-royal-turquoise to-cyan-600 text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider shadow-sm flex items-center gap-1.5">
-            <i class="fa-solid fa-star text-royal-gold"></i>
+            <div class="w-4 h-4 shrink-0">
+              <svg class="w-full h-full text-royal-gold" viewBox="0 0 200 160" fill="none">
+                <circle cx="28" cy="62" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+                <circle cx="64" cy="46" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+                <circle cx="100" cy="26" r="8" stroke="currentColor" stroke-width="8" fill="none"/>
+                <circle cx="136" cy="46" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+                <circle cx="172" cy="62" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+                <path d="M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+                <path d="M 52 138 C 82 147 118 147 148 138" stroke="currentColor" stroke-width="7.5" stroke-linecap="round"/>
+              </svg>
+            </div>
             <span>Most Popular Checkpoint Package</span>
           </div>
 
@@ -339,7 +348,6 @@
               </ul>
             </div>
 
-            <!-- Curriculum Accordion -->
             <div class="border-2 border-royal-turquoise rounded-2xl overflow-hidden bg-royal-turquoise-soft/30">
               <button onclick="toggleAccordion('checkpoint-curriculum')" class="w-full p-4 flex items-center justify-between text-left font-heading font-bold text-xs sm:text-sm text-royal-deep bg-white hover:bg-royal-turquoise-light transition cursor-pointer">
                 <span class="flex items-center gap-2">
@@ -755,11 +763,19 @@
           </div>
         </div>
 
-        <!-- ALL-INCLUSIVE PASS -->
+        <!-- ALL-INCLUSIVE PASS (With Unified Crown) -->
         <div class="bg-gradient-to-br from-royal-turquoise-light via-white to-royal-gold-light rounded-3xl p-6 sm:p-8 border-2 border-royal-turquoise flex flex-col justify-between shadow-soft-card hover:shadow-2xl transition duration-300">
           <div class="space-y-5">
-            <div class="w-14 h-14 rounded-2xl bg-royal-turquoise text-white flex items-center justify-center text-2xl shadow-glow-cyan animate-pulse">
-              <i class="fa-solid fa-crown text-royal-gold"></i>
+            <div class="w-14 h-14 rounded-2xl bg-[#45B8BE] flex items-center justify-center p-2.5 shadow-glow-cyan animate-pulse">
+              <svg class="w-9 h-9 text-white" viewBox="0 0 200 160" fill="none">
+                <circle cx="28" cy="62" r="7" stroke="white" stroke-width="7" fill="none"/>
+                <circle cx="64" cy="46" r="7" stroke="white" stroke-width="7" fill="none"/>
+                <circle cx="100" cy="26" r="8" stroke="#FFB800" stroke-width="8" fill="none"/>
+                <circle cx="136" cy="46" r="7" stroke="white" stroke-width="7" fill="none"/>
+                <circle cx="172" cy="62" r="7" stroke="white" stroke-width="7" fill="none"/>
+                <path d="M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z" stroke="white" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+                <path d="M 52 138 C 82 147 118 147 148 138" stroke="white" stroke-width="7.5" stroke-linecap="round"/>
+              </svg>
             </div>
             <div>
               <h3 class="font-heading font-bold text-2xl text-royal-deep">All-Inclusive Recorded Sessions Pass</h3>
@@ -775,8 +791,18 @@
           </div>
 
           <div class="pt-6 mt-6 border-t border-royal-turquoise">
-            <button onclick="openEnrollModal('All-Inclusive Recorded Sessions Pass', 'Custom Academic Fee')" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
-              <i class="fa-solid fa-crown text-royal-gold text-base"></i>
+            <button onclick="openEnrollModal('All-Inclusive Recorded Sessions Pass', 'Custom Academic Fee')" class="w-full py-4 rounded-2xl bg-royal-turquoise hover:bg-royal-turquoise-hover text-white font-heading font-black text-sm shadow-glow-cyan transition flex items-center justify-center gap-2.5 cursor-pointer transform hover:-translate-y-0.5">
+              <div class="w-5 h-5 shrink-0">
+                <svg class="w-full h-full text-royal-gold" viewBox="0 0 200 160" fill="none">
+                  <circle cx="28" cy="62" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+                  <circle cx="64" cy="46" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+                  <circle cx="100" cy="26" r="8" stroke="currentColor" stroke-width="8" fill="none"/>
+                  <circle cx="136" cy="46" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+                  <circle cx="172" cy="62" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+                  <path d="M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+                  <path d="M 52 138 C 82 147 118 147 148 138" stroke="currentColor" stroke-width="7.5" stroke-linecap="round"/>
+                </svg>
+              </div>
               <span>Consult & Unlock All-Inclusive Pass</span>
             </button>
           </div>
@@ -868,8 +894,19 @@
   <section id="study-buddy" class="py-20 bg-white border-b border-royal-turquoise">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-royal-gold text-royal-deep text-xs font-black shadow-sm border border-royal-gold">
-          <span>👑 Grade 9 Study Buddy &bull; Examiner Interactive Engine</span>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-royal-gold text-royal-deep text-xs font-black shadow-sm border border-royal-gold">
+          <div class="w-4 h-4 shrink-0">
+            <svg class="w-full h-full text-royal-deep" viewBox="0 0 200 160" fill="none">
+              <circle cx="28" cy="62" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+              <circle cx="64" cy="46" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+              <circle cx="100" cy="26" r="8" stroke="currentColor" stroke-width="8" fill="none"/>
+              <circle cx="136" cy="46" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+              <circle cx="172" cy="62" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+              <path d="M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+              <path d="M 52 138 C 82 147 118 147 148 138" stroke="currentColor" stroke-width="7.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span>Grade 9 Study Buddy &bull; Examiner Interactive Engine</span>
         </div>
         <h2 class="font-heading font-black text-3xl sm:text-4xl text-royal-deep">
           Interactive Grade 9 Examiner Annotator
@@ -1002,12 +1039,11 @@
   <div id="classroom-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-2 sm:p-4 bg-royal-deep/60 backdrop-blur-md">
     <div class="royal-lms-shell rounded-3xl max-w-6xl w-full h-[92vh] relative overflow-hidden flex flex-col text-royal-deep">
       
-      <!-- Gate Screen (Passcode) -->
+      <!-- Gate Screen (Passcode) with Unified Crown -->
       <div id="lms-gate-screen" class="absolute inset-0 z-30 bg-white/95 backdrop-blur-lg flex items-center justify-center p-4">
         <div class="bg-white border-2 border-royal-turquoise rounded-3xl p-6 sm:p-8 max-w-md w-full text-center space-y-4 shadow-float">
           
-          <!-- Crown SVG Icon Logo -->
-          <div class="w-16 h-16 mx-auto rounded-2xl bg-royal-turquoise text-white flex items-center justify-center shadow-glow-cyan p-2.5">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-[#45B8BE] text-white flex items-center justify-center shadow-glow-cyan p-2.5">
             <svg class="w-11 h-11 text-white" viewBox="0 0 200 160" fill="none">
               <circle cx="28" cy="62" r="7" stroke="white" stroke-width="7" fill="none"/>
               <circle cx="64" cy="46" r="7" stroke="white" stroke-width="7" fill="none"/>
@@ -1039,7 +1075,7 @@
       <!-- LMS Top Bar (Royal Crown Logo & Pure Luxury Header) -->
       <div class="bg-gradient-to-r from-royal-turquoise via-[#00B4BD] to-cyan-600 text-white px-5 py-3.5 flex items-center justify-between shrink-0 shadow-sm">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 p-1.5 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center shadow-inner">
+          <div class="w-10 h-10 p-1.5 rounded-xl bg-[#45B8BE] border border-white/30 flex items-center justify-center shadow-inner">
             <svg class="w-7 h-7 text-white" viewBox="0 0 200 160" fill="none">
               <circle cx="28" cy="62" r="7" stroke="white" stroke-width="7" fill="none"/>
               <circle cx="64" cy="46" r="7" stroke="white" stroke-width="7" fill="none"/>
@@ -1058,15 +1094,17 @@
 
         <div class="flex items-center gap-3">
           <span class="hidden sm:inline-flex items-center gap-1.5 bg-royal-gold text-royal-deep font-black text-[11px] px-3 py-1 rounded-full shadow-sm" id="lms-header-badge">
-            <svg class="w-3.5 h-3.5 inline-block text-royal-deep" viewBox="0 0 200 160" fill="none">
-              <circle cx="28" cy="62" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
-              <circle cx="64" cy="46" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
-              <circle cx="100" cy="26" r="8" stroke="currentColor" stroke-width="8" fill="none"/>
-              <circle cx="136" cy="46" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
-              <circle cx="172" cy="62" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
-              <path d="M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" fill="none"/>
-              <path d="M 52 138 C 82 147 118 147 148 138" stroke="currentColor" stroke-width="7.5" stroke-linecap="round"/>
-            </svg>
+            <div class="w-3.5 h-3.5 inline-block shrink-0">
+              <svg class="w-full h-full text-royal-deep" viewBox="0 0 200 160" fill="none">
+                <circle cx="28" cy="62" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+                <circle cx="64" cy="46" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+                <circle cx="100" cy="26" r="8" stroke="currentColor" stroke-width="8" fill="none"/>
+                <circle cx="136" cy="46" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+                <circle cx="172" cy="62" r="7" stroke="currentColor" stroke-width="7" fill="none"/>
+                <path d="M 33 76 C 45 106 58 116 68 88 C 78 64 90 40 100 40 C 110 40 122 64 132 88 C 142 116 155 106 167 76 C 158 118 136 126 100 126 C 64 126 42 118 33 76 Z" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+                <path d="M 52 138 C 82 147 118 147 148 138" stroke="currentColor" stroke-width="7.5" stroke-linecap="round"/>
+              </svg>
+            </div>
             Enrolled
           </span>
           <button onclick="closeClassroomModal()" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition cursor-pointer">
@@ -1209,11 +1247,11 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer with Unified Crown Logo -->
   <footer class="bg-white text-royal-deep py-14 border-t-2 border-royal-turquoise">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col items-center text-center space-y-4 mb-10">
-        <div class="w-14 h-14 rounded-2xl bg-royal-turquoise flex items-center justify-center shadow-glow-cyan">
+        <div class="w-14 h-14 rounded-2xl bg-[#45B8BE] flex items-center justify-center shadow-glow-cyan p-2.5">
           <svg class="w-10 h-10 text-white" viewBox="0 0 200 160" fill="none">
             <circle cx="28" cy="62" r="7" stroke="white" stroke-width="7" fill="none"/>
             <circle cx="64" cy="46" r="7" stroke="white" stroke-width="7" fill="none"/>
